@@ -27,7 +27,8 @@
     </constructors>
     <methods>
         <method access="public" type="void" type-java="void" name="act" enable="true">
-            <javadoc xml:space="preserve">Act - do whatever the CrackMan wants to do. This method is called whenever the 'Act' or 'Run' button gets pressed in the environment.</javadoc>
+            <javadoc xml:space="preserve">Act - do whatever the CrackMan wants to do. This method is called whenever the 'Act' or 'Run' button gets pressed in the environment.
+MyWorld thisGame</javadoc>
             <params/>
             <throws/>
             <body>
@@ -97,6 +98,26 @@
                     </ifStatements>
                 </if>
                 <call expression="setLocation(x,y)" expression-java="setLocation(x, y)" enable="true"/>
+                <if condition="isTouching(Wall_Right.class)" condition-java="isTouching(Wall_Right.class)" enable="true">
+                    <ifStatements>
+                        <call expression="setLocation(getX()-2,getY()-2)" expression-java="setLocation(getX() - 2, getY() - 2)" enable="true"/>
+                    </ifStatements>
+                </if>
+                <if condition="isTouching(Wall_Up.class)" condition-java="isTouching(Wall_Up.class)" enable="true">
+                    <ifStatements>
+                        <call expression="setLocation(getX()-2,getY()+2)" expression-java="setLocation(getX() - 2, getY() + 2)" enable="true"/>
+                    </ifStatements>
+                </if>
+                <if condition="isTouching(Wall_Down.class)" condition-java="isTouching(Wall_Down.class)" enable="true">
+                    <ifStatements>
+                        <call expression="setLocation(getX()+2,getY()-2)" expression-java="setLocation(getX() + 2, getY() - 2)" enable="true"/>
+                    </ifStatements>
+                </if>
+                <if condition="isTouching(Wall_Left.class)" condition-java="isTouching(Wall_Left.class)" enable="true">
+                    <ifStatements>
+                        <call expression="setLocation(getX()+2,getY()+2)" expression-java="setLocation(getX() + 2, getY() + 2)" enable="true"/>
+                    </ifStatements>
+                </if>
             </body>
         </method>
         <method access="public" type="void" type-java="void" name="eatTacos" enable="true">
@@ -108,6 +129,7 @@
                 <if condition="taco!=null" condition-java="taco != null" enable="true">
                     <ifStatements>
                         <call expression="getWorld().removeObject(taco)" expression-java="getWorld().removeObject(taco)" enable="true"/>
+                        <assign dest="GameWorld.score" dest-java="GameWorld.score" src="GameWorld.score+100" src-java="GameWorld.score + 100" enable="true"/>
                         <comment xml:space="preserve">Score transfer is needed here</comment>
                     </ifStatements>
                 </if>

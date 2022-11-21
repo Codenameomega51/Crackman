@@ -23,5 +23,8 @@ public class Ghost2 extends Ghosts
     public void mouvement()
     {
         move(3);
+        if (isTouching(Wall_Right.class)) {
+            setLocation(getX() - 2, getY() - 2);
+        }
     }
 }

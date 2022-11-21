@@ -4,6 +4,7 @@
     <imports>
         <import target="java.util.*" enable="true"/>
         <import target="greenfoot.*" enable="true"/>
+        <import target="lang.stride.*" enable="true"/>
     </imports>
     <implements/>
     <fields/>
@@ -12,7 +13,7 @@
             <javadoc xml:space="preserve">Constructor for objects of class SplashScreen.</javadoc>
             <params/>
             <throws/>
-            <delegate target="super" params="900,900,1" params-java="900, 900, 1"/>
+            <delegate target="super" params="900,800,1" params-java="900, 800, 1"/>
             <body>
                 <call expression="prepare()" expression-java="prepare()" enable="true"/>
             </body>
@@ -51,10 +52,14 @@ That is: create the initial objects and add them to the world.</javadoc>
             <params/>
             <throws/>
             <body>
-                <variable type="Powerup" type-java="Powerup" name="powerup" value="new Powerup()" value-java=" new Powerup()" enable="true"/>
-                <call expression="addObject(powerup,263,766)" expression-java="addObject(powerup, 263, 766)" enable="true"/>
-                <variable type="CrackMan" type-java="CrackMan" name="crackMan" value="new CrackMan()" value-java=" new CrackMan()" enable="true"/>
-                <call expression="addObject(crackMan,451,569)" expression-java="addObject(crackMan, 451, 569)" enable="true"/>
+                <variable type="LOGO_Group" type-java="LOGO_Group" name="lOGO_Group" value="new LOGO_Group()" value-java=" new LOGO_Group()" enable="true"/>
+                <call expression="addObject(lOGO_Group,300,400)" expression-java="addObject(lOGO_Group, 300, 400)" enable="true"/>
+                <variable type="LOGOSchool" type-java="LOGOSchool" name="lOGOSchool" value="new LOGOSchool()" value-java=" new LOGOSchool()" enable="true"/>
+                <call expression="addObject(lOGOSchool,getWidth()/2,750)" expression-java="addObject(lOGOSchool, getWidth() / 2, 750)" enable="true"/>
+                <variable type="LOGO_GroupNames" type-java="LOGO_GroupNames" name="lOGO_GroupNames" value="new LOGO_GroupNames()" value-java=" new LOGO_GroupNames()" enable="true"/>
+                <call expression="addObject(lOGO_GroupNames,560,405)" expression-java="addObject(lOGO_GroupNames, 560, 405)" enable="true"/>
+                <variable type="LOGO_CourseName" type-java="LOGO_CourseName" name="lOGO_CourseName" value="new LOGO_CourseName()" value-java=" new LOGO_CourseName()" enable="true"/>
+                <call expression="addObject(lOGO_CourseName,450,218)" expression-java="addObject(lOGO_CourseName, 450, 218)" enable="true"/>
             </body>
         </method>
     </methods>

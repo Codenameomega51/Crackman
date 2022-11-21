@@ -26,6 +26,7 @@ public class CrackMan extends Actor
 
     /**
      * Act - do whatever the CrackMan wants to do. This method is called whenever the 'Act' or 'Run' button gets pressed in the environment.
+     * MyWorld thisGame
      */
     public void act()
     {
@@ -77,6 +78,18 @@ public class CrackMan extends Actor
             setRotation(90);
         }
         setLocation(x, y);
+        if (isTouching(Wall_Right.class)) {
+            setLocation(getX() - 2, getY() - 2);
+        }
+        if (isTouching(Wall_Up.class)) {
+            setLocation(getX() - 2, getY() + 2);
+        }
+        if (isTouching(Wall_Down.class)) {
+            setLocation(getX() + 2, getY() - 2);
+        }
+        if (isTouching(Wall_Left.class)) {
+            setLocation(getX() + 2, getY() + 2);
+        }
     }
 
     /**
@@ -87,6 +100,7 @@ public class CrackMan extends Actor
         Actor taco = getOneIntersectingObject(Tacos.class);
         if (taco != null) {
             getWorld().removeObject(taco);
+            GameWorld.score = GameWorld.score + 100;
             /* Score transfer is needed here*/
         }
     }

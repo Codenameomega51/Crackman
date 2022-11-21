@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=World_CrackMan
+comment0.text=\r\n\ \r\n
+comment1.params=
+comment1.target=World_CrackMan()
+comment1.text=\r\n\ \r\n
+comment2.params=
+comment2.target=void\ act()
+comment2.text=\r\n\ Act\ -\ do\ whatever\ the\ CopyOfCrackMan\ wants\ to\ do.\ This\ method\ is\ called\ whenever\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n\ MyWorld\ thisGame\r\n
+numComments=3

@@ -23,6 +23,11 @@
             <throws/>
             <body>
                 <call expression="move(3)" expression-java="move(3)" enable="true"/>
+                <if condition="isTouching(Wall_Right.class)" condition-java="isTouching(Wall_Right.class)" enable="true">
+                    <ifStatements>
+                        <call expression="setLocation(getX()-2,getY()-2)" expression-java="setLocation(getX() - 2, getY() - 2)" enable="true"/>
+                    </ifStatements>
+                </if>
             </body>
         </method>
     </methods>

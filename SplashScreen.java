@@ -2,6 +2,7 @@
 import lang.stride.*;
 import java.util.*;
 import greenfoot.*;
+import lang.stride.*;
 
 /**
  * 
@@ -14,7 +15,7 @@ public class SplashScreen extends World
      */
     public SplashScreen()
     {
-        super(900, 900, 1);
+        super(900, 800, 1);
         prepare();
     }
 
@@ -24,7 +25,7 @@ public class SplashScreen extends World
     public void act()
     {
         if (exit()) {
-            Greenfoot.setWorld( new MainMenu());
+            Greenfoot.setWorld( new  MainMenu());
         }
     }
 
@@ -46,9 +47,13 @@ public class SplashScreen extends World
      */
     private void prepare()
     {
-        Powerup powerup =  new Powerup();
-        addObject(powerup, 263, 766);
-        CrackMan crackMan =  new CrackMan();
-        addObject(crackMan, 451, 569);
+        LOGO_Group lOGO_Group =  new  LOGO_Group();
+        addObject(lOGO_Group, 300, 400);
+        LOGOSchool lOGOSchool =  new  LOGOSchool();
+        addObject(lOGOSchool, getWidth() / 2, 750);
+        LOGO_GroupNames lOGO_GroupNames =  new  LOGO_GroupNames();
+        addObject(lOGO_GroupNames, 560, 405);
+        LOGO_CourseName lOGO_CourseName =  new  LOGO_CourseName();
+        addObject(lOGO_CourseName, 450, 218);
     }
 }

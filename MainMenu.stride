@@ -6,17 +6,16 @@
         <import target="greenfoot.*" enable="true"/>
     </imports>
     <implements/>
-    <fields>
-        <variable access="public" static="true" type="int" type-java="int" name="score" value="0" value-java="0" enable="true"/>
-    </fields>
+    <fields/>
     <constructors>
         <constructor access="public" enable="true">
             <javadoc xml:space="preserve">Constructor for objects of class MainMenu.</javadoc>
             <params/>
             <throws/>
-            <delegate target="super" params="900,900,1" params-java="900, 900, 1"/>
+            <delegate target="super" params="900,800,1" params-java="900, 800, 1"/>
             <body>
                 <call expression="prepare()" expression-java="prepare()" enable="true"/>
+                <call expression="act()" expression-java="act()" enable="true"/>
             </body>
         </constructor>
     </constructors>
@@ -26,52 +25,20 @@
             <params/>
             <throws/>
             <body>
-                <variable type="Ghost1" type-java="Ghost1" name="ghost1" value="new Ghost1()" value-java=" new Ghost1()" enable="true"/>
-                <call expression="addObject(ghost1,503,558)" expression-java="addObject(ghost1, 503, 558)" enable="true"/>
-                <variable type="CrackMan" type-java="CrackMan" name="crackMan" value="new CrackMan()" value-java=" new CrackMan()" enable="true"/>
-                <call expression="addObject(crackMan,190,351)" expression-java="addObject(crackMan, 190, 351)" enable="true"/>
-                <variable type="Tacos" type-java="Tacos" name="tacos" value="new Tacos()" value-java=" new Tacos()" enable="true"/>
-                <call expression="addObject(tacos,660,172)" expression-java="addObject(tacos, 660, 172)" enable="true"/>
-                <variable type="Tacos" type-java="Tacos" name="tacos2" value="new Tacos()" value-java=" new Tacos()" enable="true"/>
-                <call expression="addObject(tacos2,708,244)" expression-java="addObject(tacos2, 708, 244)" enable="true"/>
-                <variable type="Tacos" type-java="Tacos" name="tacos3" value="new Tacos()" value-java=" new Tacos()" enable="true"/>
-                <call expression="addObject(tacos3,592,286)" expression-java="addObject(tacos3, 592, 286)" enable="true"/>
-                <variable type="Tacos" type-java="Tacos" name="tacos4" value="new Tacos()" value-java=" new Tacos()" enable="true"/>
-                <call expression="addObject(tacos4,662,392)" expression-java="addObject(tacos4, 662, 392)" enable="true"/>
-                <variable type="Tacos" type-java="Tacos" name="tacos5" value="new Tacos()" value-java=" new Tacos()" enable="true"/>
-                <call expression="addObject(tacos5,770,355)" expression-java="addObject(tacos5, 770, 355)" enable="true"/>
-                <variable type="Tacos" type-java="Tacos" name="tacos6" value="new Tacos()" value-java=" new Tacos()" enable="true"/>
-                <call expression="addObject(tacos6,769,491)" expression-java="addObject(tacos6, 769, 491)" enable="true"/>
-                <variable type="Tacos" type-java="Tacos" name="tacos7" value="new Tacos()" value-java=" new Tacos()" enable="true"/>
-                <call expression="addObject(tacos7,562,554)" expression-java="addObject(tacos7, 562, 554)" enable="true"/>
-                <variable type="Tacos" type-java="Tacos" name="tacos8" value="new Tacos()" value-java=" new Tacos()" enable="true"/>
-                <call expression="addObject(tacos8,748,618)" expression-java="addObject(tacos8, 748, 618)" enable="true"/>
-                <variable type="Tacos" type-java="Tacos" name="tacos9" value="new Tacos()" value-java=" new Tacos()" enable="true"/>
-                <call expression="addObject(tacos9,733,548)" expression-java="addObject(tacos9, 733, 548)" enable="true"/>
-                <variable type="Tacos" type-java="Tacos" name="tacos10" value="new Tacos()" value-java=" new Tacos()" enable="true"/>
-                <call expression="addObject(tacos10,660,489)" expression-java="addObject(tacos10, 660, 489)" enable="true"/>
-                <variable type="Tacos" type-java="Tacos" name="tacos11" value="new Tacos()" value-java=" new Tacos()" enable="true"/>
-                <call expression="addObject(tacos11,791,447)" expression-java="addObject(tacos11, 791, 447)" enable="true"/>
-                <call expression="removeObject(ghost1)" expression-java="removeObject(ghost1)" enable="true"/>
+                <variable type="LOGO_GameName" type-java="LOGO_GameName" name="lOGO_GameName" value="new LOGO_GameName()" value-java=" new LOGO_GameName()" enable="true"/>
+                <call expression="addObject(lOGO_GameName,458,183)" expression-java="addObject(lOGO_GameName, 458, 183)" enable="true"/>
+                <variable type="World_CrackMan" type-java="World_CrackMan" name="world_CrackMan" value="new World_CrackMan()" value-java=" new World_CrackMan()" enable="true"/>
+                <call expression="addObject(world_CrackMan,41,290)" expression-java="addObject(world_CrackMan, 41, 290)" enable="true"/>
+                <variable type="World_PlayButton" type-java="World_PlayButton" name="world_PlayButton" value="new World_PlayButton()" value-java=" new World_PlayButton()" enable="true"/>
+                <call expression="addObject(world_PlayButton,450,615)" expression-java="addObject(world_PlayButton, 450, 615)" enable="true"/>
+                <call expression="world_CrackMan.setLocation(183,118)" expression-java="world_CrackMan.setLocation(183, 118)" enable="true"/>
             </body>
         </method>
         <method access="public" type="void" type-java="void" name="act" enable="true">
             <javadoc xml:space="preserve"/>
             <params/>
             <throws/>
-            <body>
-                <call expression="scoreSystem(score)" expression-java="scoreSystem(score)" enable="true"/>
-            </body>
-        </method>
-        <method access="public" type="void" type-java="void" name="scoreSystem" enable="true">
-            <javadoc xml:space="preserve"/>
-            <params>
-                <params type="int" type-java="int" name="score"/>
-            </params>
-            <throws/>
-            <body>
-                <call expression="showText(&quot;Score: &quot;+score,getWidth()/2,getHeight()/2)" expression-java="showText(&quot;Score: &quot; + score, getWidth() / 2, getHeight() / 2)" enable="true"/>
-            </body>
+            <body/>
         </method>
     </methods>
 </class>

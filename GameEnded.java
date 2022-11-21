@@ -13,6 +13,6 @@ public class GameEnded extends World
      */
     public GameEnded()
     {
-        super(900, 900, 1);
+        super(900, 800, 1);
     }
 }
