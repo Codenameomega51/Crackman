@@ -24,11 +24,11 @@ public class MainMenu extends World
      */
     private void prepare()
     {
-        LOGO_GameName lOGO_GameName =  new  LOGO_GameName();
+        LOGO_GameName lOGO_GameName =  new LOGO_GameName();
         addObject(lOGO_GameName, 458, 183);
-        World_CrackMan world_CrackMan =  new  World_CrackMan();
+        World_CrackMan world_CrackMan =  new World_CrackMan();
         addObject(world_CrackMan, 41, 290);
-        World_PlayButton world_PlayButton =  new  World_PlayButton();
+        World_PlayButton world_PlayButton =  new World_PlayButton();
         addObject(world_PlayButton, 450, 615);
         world_CrackMan.setLocation(183, 118);
     }
