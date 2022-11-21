@@ -30,7 +30,6 @@ public class CrackMan extends Actor
      */
     public void act()
     {
-        canMoveleft();
         moving();
         eatTacos();
         if (eatPowerup()) {
@@ -46,49 +45,54 @@ public class CrackMan extends Actor
         int x = getX();
         int y = getY();
         if (Greenfoot.isKeyDown("d")) {
-            direction = 0;
-        }
-        if (Greenfoot.isKeyDown("w")) {
             direction = 1;
         }
-        if (Greenfoot.isKeyDown("a")) {
+        if (Greenfoot.isKeyDown("w")) {
             direction = 2;
         }
-        if (Greenfoot.isKeyDown("s")) {
+        if (Greenfoot.isKeyDown("a")) {
             direction = 3;
         }
-        if (direction == 0) {
+        if (Greenfoot.isKeyDown("s")) {
+            direction = 4;
+        }
+        if (direction == 1) {
             x = x + 2;
             setImage("Crackman_Right.png");
             setRotation(0);
         }
-        if (direction == 1) {
+        if (direction == 2) {
             y = y - 2;
             setImage("Crackman_Right.png");
             setRotation(270);
         }
-        if (direction == 2 && canMoveleft()) {
+        if (direction == 3) {
             x = x - 2;
             setImage("Crackman.png");
             setRotation(180);
         }
-        if (direction == 3) {
+        if (direction == 4) {
             y = y + 2;
             setImage("Crackman_Right.png");
             setRotation(90);
         }
         setLocation(x, y);
+        /* Need to fix the sliding bug  and the teleportation for the maze wall*/
         if (isTouching(Wall_Right.class)) {
             setLocation(getX() - 2, getY() - 2);
+            direction = 0;
         }
         if (isTouching(Wall_Up.class)) {
             setLocation(getX() - 2, getY() + 2);
+            direction = 0;
         }
         if (isTouching(Wall_Down.class)) {
             setLocation(getX() + 2, getY() - 2);
+            direction = 0;
         }
         if (isTouching(Wall_Left.class)) {
             setLocation(getX() + 2, getY() + 2);
+            direction = 0;
         }
     }
 
@@ -100,8 +104,7 @@ public class CrackMan extends Actor
         Actor taco = getOneIntersectingObject(Tacos.class);
         if (taco != null) {
             getWorld().removeObject(taco);
-            GameWorld.score = GameWorld.score + 100;
-            /* Score transfer is needed here*/
+            Level.score = Level.score + 100;
         }
     }
 
@@ -133,20 +136,5 @@ public class CrackMan extends Actor
         else {
             move(speed);
         }
-    }
-
-    /**
-     * 
-     */
-    public boolean canMoveleft()
-    {
-        boolean moveLeft = true;
-        int width = getImage().getWidth();
-        int height = getImage().getHeight();
-        /* Something wrong with this if statement, possibly the calling of the class??*/
-        if (getObjectsAtOffset(width / -2, height / -2, Wall.class) == null) {
-            moveLeft = false;
-        }
-        return moveLeft;
     }
 }

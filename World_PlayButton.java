@@ -23,7 +23,7 @@ public class World_PlayButton extends Actor
     public void act()
     {
         if (Greenfoot.mousePressed(this)) {
-            Greenfoot.setWorld( new GameWorld());
+            Greenfoot.setWorld( new  Level());
         }
     }
 }

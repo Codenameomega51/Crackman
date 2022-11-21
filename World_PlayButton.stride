@@ -25,7 +25,7 @@
             <body>
                 <if condition="Greenfoot.mousePressed(this)" condition-java="Greenfoot.mousePressed(this)" enable="true">
                     <ifStatements>
-                        <call expression="Greenfoot.setWorld(new GameWorld())" expression-java="Greenfoot.setWorld( new GameWorld())" enable="true"/>
+                        <call expression="Greenfoot.setWorld(new Level())" expression-java="Greenfoot.setWorld( new Level())" enable="true"/>
                     </ifStatements>
                 </if>
             </body>

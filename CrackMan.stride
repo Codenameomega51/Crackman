@@ -32,7 +32,6 @@ MyWorld thisGame</javadoc>
             <params/>
             <throws/>
             <body>
-                <call expression="canMoveleft()" expression-java="canMoveleft()" enable="true"/>
                 <call expression="moving()" expression-java="moving()" enable="true"/>
                 <call expression="eatTacos()" expression-java="eatTacos()" enable="true"/>
                 <if condition="eatPowerup()" condition-java="eatPowerup()" enable="true">
@@ -51,46 +50,46 @@ MyWorld thisGame</javadoc>
                 <variable type="int" type-java="int" name="y" value="getY()" value-java="getY()" enable="true"/>
                 <if condition="Greenfoot.isKeyDown(&quot;d&quot;)" condition-java="Greenfoot.isKeyDown(&quot;d&quot;)" enable="true">
                     <ifStatements>
-                        <assign dest="direction" dest-java="direction" src="0" src-java="0" enable="true"/>
+                        <assign dest="direction" dest-java="direction" src="1" src-java="1" enable="true"/>
                     </ifStatements>
                 </if>
                 <if condition="Greenfoot.isKeyDown(&quot;w&quot;)" condition-java="Greenfoot.isKeyDown(&quot;w&quot;)" enable="true">
                     <ifStatements>
-                        <assign dest="direction" dest-java="direction" src="1" src-java="1" enable="true"/>
+                        <assign dest="direction" dest-java="direction" src="2" src-java="2" enable="true"/>
                     </ifStatements>
                 </if>
                 <if condition="Greenfoot.isKeyDown(&quot;a&quot;)" condition-java="Greenfoot.isKeyDown(&quot;a&quot;)" enable="true">
                     <ifStatements>
-                        <assign dest="direction" dest-java="direction" src="2" src-java="2" enable="true"/>
+                        <assign dest="direction" dest-java="direction" src="3" src-java="3" enable="true"/>
                     </ifStatements>
                 </if>
                 <if condition="Greenfoot.isKeyDown(&quot;s&quot;)" condition-java="Greenfoot.isKeyDown(&quot;s&quot;)" enable="true">
                     <ifStatements>
-                        <assign dest="direction" dest-java="direction" src="3" src-java="3" enable="true"/>
+                        <assign dest="direction" dest-java="direction" src="4" src-java="4" enable="true"/>
                     </ifStatements>
                 </if>
-                <if condition="direction==0" condition-java="direction == 0" enable="true">
+                <if condition="direction==1" condition-java="direction == 1" enable="true">
                     <ifStatements>
                         <assign dest="x" dest-java="x" src="x+2" src-java="x + 2" enable="true"/>
                         <call expression="setImage(&quot;Crackman_Right.png&quot;)" expression-java="setImage(&quot;Crackman_Right.png&quot;)" enable="true"/>
                         <call expression="setRotation(0)" expression-java="setRotation(0)" enable="true"/>
                     </ifStatements>
                 </if>
-                <if condition="direction==1" condition-java="direction == 1" enable="true">
+                <if condition="direction==2" condition-java="direction == 2" enable="true">
                     <ifStatements>
                         <assign dest="y" dest-java="y" src="y-2" src-java="y - 2" enable="true"/>
                         <call expression="setImage(&quot;Crackman_Right.png&quot;)" expression-java="setImage(&quot;Crackman_Right.png&quot;)" enable="true"/>
                         <call expression="setRotation(270)" expression-java="setRotation(270)" enable="true"/>
                     </ifStatements>
                 </if>
-                <if condition="direction==2&amp;&amp;canMoveleft()" condition-java="direction == 2 &amp;&amp; canMoveleft()" enable="true">
+                <if condition="direction==3" condition-java="direction == 3" enable="true">
                     <ifStatements>
                         <assign dest="x" dest-java="x" src="x-2" src-java="x - 2" enable="true"/>
                         <call expression="setImage(&quot;Crackman.png&quot;)" expression-java="setImage(&quot;Crackman.png&quot;)" enable="true"/>
                         <call expression="setRotation(180)" expression-java="setRotation(180)" enable="true"/>
                     </ifStatements>
                 </if>
-                <if condition="direction==3" condition-java="direction == 3" enable="true">
+                <if condition="direction==4" condition-java="direction == 4" enable="true">
                     <ifStatements>
                         <assign dest="y" dest-java="y" src="y+2" src-java="y + 2" enable="true"/>
                         <call expression="setImage(&quot;Crackman_Right.png&quot;)" expression-java="setImage(&quot;Crackman_Right.png&quot;)" enable="true"/>
@@ -98,24 +97,29 @@ MyWorld thisGame</javadoc>
                     </ifStatements>
                 </if>
                 <call expression="setLocation(x,y)" expression-java="setLocation(x, y)" enable="true"/>
+                <comment xml:space="preserve">Need to fix the sliding bug  and the teleportation for the maze wall</comment>
                 <if condition="isTouching(Wall_Right.class)" condition-java="isTouching(Wall_Right.class)" enable="true">
                     <ifStatements>
                         <call expression="setLocation(getX()-2,getY()-2)" expression-java="setLocation(getX() - 2, getY() - 2)" enable="true"/>
+                        <assign dest="direction" dest-java="direction" src="0" src-java="0" enable="true"/>
                     </ifStatements>
                 </if>
                 <if condition="isTouching(Wall_Up.class)" condition-java="isTouching(Wall_Up.class)" enable="true">
                     <ifStatements>
                         <call expression="setLocation(getX()-2,getY()+2)" expression-java="setLocation(getX() - 2, getY() + 2)" enable="true"/>
+                        <assign dest="direction" dest-java="direction" src="0" src-java="0" enable="true"/>
                     </ifStatements>
                 </if>
                 <if condition="isTouching(Wall_Down.class)" condition-java="isTouching(Wall_Down.class)" enable="true">
                     <ifStatements>
                         <call expression="setLocation(getX()+2,getY()-2)" expression-java="setLocation(getX() + 2, getY() - 2)" enable="true"/>
+                        <assign dest="direction" dest-java="direction" src="0" src-java="0" enable="true"/>
                     </ifStatements>
                 </if>
                 <if condition="isTouching(Wall_Left.class)" condition-java="isTouching(Wall_Left.class)" enable="true">
                     <ifStatements>
                         <call expression="setLocation(getX()+2,getY()+2)" expression-java="setLocation(getX() + 2, getY() + 2)" enable="true"/>
+                        <assign dest="direction" dest-java="direction" src="0" src-java="0" enable="true"/>
                     </ifStatements>
                 </if>
             </body>
@@ -129,8 +133,7 @@ MyWorld thisGame</javadoc>
                 <if condition="taco!=null" condition-java="taco != null" enable="true">
                     <ifStatements>
                         <call expression="getWorld().removeObject(taco)" expression-java="getWorld().removeObject(taco)" enable="true"/>
-                        <assign dest="GameWorld.score" dest-java="GameWorld.score" src="GameWorld.score+100" src-java="GameWorld.score + 100" enable="true"/>
-                        <comment xml:space="preserve">Score transfer is needed here</comment>
+                        <assign dest="Level.score" dest-java="Level.score" src="Level.score+100" src-java="Level.score + 100" enable="true"/>
                     </ifStatements>
                 </if>
             </body>
@@ -169,23 +172,6 @@ MyWorld thisGame</javadoc>
                         <call expression="move(speed)" expression-java="move(speed)" enable="true"/>
                     </else>
                 </if>
-            </body>
-        </method>
-        <method access="public" type="boolean" type-java="boolean" name="canMoveleft" enable="true">
-            <javadoc xml:space="preserve"/>
-            <params/>
-            <throws/>
-            <body>
-                <variable type="boolean" type-java="boolean" name="moveLeft" value="true" value-java="true" enable="true"/>
-                <variable type="int" type-java="int" name="width" value="getImage().getWidth()" value-java="getImage().getWidth()" enable="true"/>
-                <variable type="int" type-java="int" name="height" value="getImage().getHeight()" value-java="getImage().getHeight()" enable="true"/>
-                <comment xml:space="preserve">Something wrong with this if statement, possibly the calling of the class??</comment>
-                <if condition="getObjectsAtOffset(width/-2,height/-2,Wall.class)==null" condition-java="getObjectsAtOffset(width / -2, height / -2, Wall.class) == null" enable="true">
-                    <ifStatements>
-                        <assign dest="moveLeft" dest-java="moveLeft" src="false" src-java="false" enable="true"/>
-                    </ifStatements>
-                </if>
-                <return value="moveLeft" value-java="moveLeft" enable="true"/>
             </body>
         </method>
     </methods>
