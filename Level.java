@@ -1,4 +1,3 @@
-// WARNING: This file is auto-generated and any changes to it will be overwritten
 import lang.stride.*;
 import java.util.*;
 import greenfoot.*;
@@ -174,7 +173,10 @@ public class Level extends World
         removeObject(wall_Down11);
         removeObject(wall_Right10);
         Wall wall3 =  new  Wall();
-        addObject(wall3, 254, 380);
+        addObject(wall3, 264, 380);
+
+        WallHorizontal wallHorizontal = new WallHorizontal();
+        addObject(wallHorizontal,243,205);
     }
 
     /**
