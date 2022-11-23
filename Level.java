@@ -8,7 +8,7 @@ import greenfoot.*;
 public class Level extends World
 {
     public static int score = 0;
-
+    public static int lives = 3;
     /**
      * Constructor for objects of class MainMenu.
      */
@@ -174,9 +174,8 @@ public class Level extends World
         removeObject(wall_Right10);
         Wall wall3 =  new  Wall();
         addObject(wall3, 264, 380);
-
-        WallHorizontal wallHorizontal = new WallHorizontal();
-        addObject(wallHorizontal,243,205);
+        WallHorizontal wallHorizontal =  new  WallHorizontal();
+        addObject(wallHorizontal, 243, 205);
     }
 
     /**
@@ -194,11 +193,14 @@ public class Level extends World
     {
         showText("Score: " + score, 85, 17);
     }
-
+    
     /**
      * 
      */
     public void livesCount()
     {
+        for(int i = 0; i < lives; i++){
+            addObject(Lives, _x_, _y_);
+        }
     }
 }

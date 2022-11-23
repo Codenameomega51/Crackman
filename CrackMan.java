@@ -1,3 +1,4 @@
+// WARNING: This file is auto-generated and any changes to it will be overwritten
 import lang.stride.*;
 import java.util.*;
 import greenfoot.*;
@@ -24,8 +25,7 @@ public class CrackMan extends Actor
     }
 
     /**
-     * Act - do whatever the CrackMan wants to do. This method is called whenever the 'Act' or 'Run' button gets pressed in the environment.
-     * MyWorld thisGame
+     * Act - do whatever the CrackMan wants to do. This method is called whenever the 'Act' or 'Run' button gets pressed in the environment. MyWorld thisGame
      */
     public void act()
     {
@@ -97,34 +97,39 @@ public class CrackMan extends Actor
         Actor wall_H;
         wall_V = getOneIntersectingObject(Wall.class);
         wall_H = getOneIntersectingObject(WallHorizontal.class);
-        if (wall_V != null ) {
-
-            if(direction == 3) {
-                setLocation(getX()+2,getY());
-                direction = 0;
-            } else if (direction == 2){
-                setLocation(getX(),getY()+3);
+        if (wall_V != null) {
+            if (direction == 3) {
+                setLocation(getX() + 2, getY());
                 direction = 0;
             }
-            else { setLocation(getX()-2,getY()-2);
-                direction = 0;}
+            else if (direction == 2) {
+                setLocation(getX(), getY() + 3);
+                direction = 0;
+            }
+            else {
+                setLocation(getX() - 2, getY() - 2);
+                direction = 0;
+            }
         }
-        if (wall_H != null ) {
-
-            if(direction == 1){ setLocation(getX()-2,getY());
-                direction = 0;}
-                else if (direction == 2) {
-                setLocation(getX(),getY()+2);
+        if (wall_H != null) {
+            if (direction == 1) {
+                setLocation(getX() - 2, getY());
                 direction = 0;
-            }  else if (direction == 3){
-                setLocation(getX()+2,getY());
+            }
+            else if (direction == 2) {
+                setLocation(getX(), getY() + 2);
                 direction = 0;
-            }else {
-                setLocation(getX(),getY()-2);
+            }
+            else if (direction == 3) {
+                setLocation(getX() + 2, getY());
                 direction = 0;
-           
-
-    }}}
+            }
+            else {
+                setLocation(getX(), getY() - 2);
+                direction = 0;
+            }
+        }
+    }
 
     /**
      * 
@@ -165,6 +170,18 @@ public class CrackMan extends Actor
         }
         else {
             move(speed);
+        }
+    }
+
+    /**
+     * 
+     */
+    public void defeat()
+    {
+        Actor ghosted = getOneIntersectingObject(Ghosts.class);
+        if (ghosted != null) {
+            /* Trigger death animation for crackman*/
+            Level.lives = Level.lives - 1;
         }
     }
 }
