@@ -13,6 +13,7 @@ comment3.text=\r\n\ \r\n
 comment4.params=
 comment4.target=void\ wallCollide()
 comment4.text=\r\n\ \r\n
+<<<<<<< HEAD
 comment5.params=
 <<<<<<< Updated upstream
 comment5.target=boolean\ win()
@@ -20,3 +21,6 @@ comment5.target=boolean\ win()
 comment5.target=void\ innerWalls()
 >>>>>>> Stashed changes
 numComments=6
+=======
+numComments=5
+>>>>>>> parent of 887fe30 (highscore, score, lives)

@@ -133,7 +133,11 @@
                                 <assign dest="direction" dest-java="direction" src="0" src-java="0" enable="true"/>
                             </ifStatements>
                             <elseIf condition="direction==2" condition-java="direction == 2">
+<<<<<<< HEAD
                                 <call expression="setLocation(getX(),getY()-3)" expression-java="setLocation(getX(), getY() - 3)" enable="true"/>
+=======
+                                <call expression="setLocation(getX(),getY()+3)" expression-java="setLocation(getX(), getY() + 3)" enable="true"/>
+>>>>>>> parent of 887fe30 (highscore, score, lives)
                                 <assign dest="direction" dest-java="direction" src="0" src-java="0" enable="true"/>
                             </elseIf>
                             <else>
@@ -223,10 +227,17 @@
             <throws/>
             <body>
                 <variable type="Actor" type-java="Actor" name="ghosted" value="getOneIntersectingObject(Ghosts.class)" value-java="getOneIntersectingObject(Ghosts.class)" enable="true"/>
+<<<<<<< HEAD
                 <if condition="ghosted!=null" condition-java="ghosted != null" enable="false">
                     <ifStatements>
                         <comment xml:space="preserve">Trigger death animation for crackman</comment>
                         <assign dest="Level.lives" dest-java="Level.lives" src="Level.lives-1" src-java="Level.lives - 1" enable="false"/>
+=======
+                <if condition="ghosted!=null" condition-java="ghosted != null" enable="true">
+                    <ifStatements>
+                        <comment xml:space="preserve">Trigger death animation for crackman</comment>
+                        <assign dest="Level.lives" dest-java="Level.lives" src="Level.lives-1" src-java="Level.lives - 1" enable="true"/>
+>>>>>>> parent of 887fe30 (highscore, score, lives)
                     </ifStatements>
                 </if>
             </body>

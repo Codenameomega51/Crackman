@@ -179,5 +179,12 @@ public class CrackMan extends Actor
     public void defeat()
     {
         Actor ghosted = getOneIntersectingObject(Ghosts.class);
+<<<<<<< HEAD
+=======
+        if (ghosted != null) {
+            /* Trigger death animation for crackman*/
+            Level.lives = Level.lives - 1;
+        }
+>>>>>>> parent of 887fe30 (highscore, score, lives)
     }
 }

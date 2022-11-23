@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class name="Ghost1" extends="Ghosts" extends-java="Ghosts" enable="true" strideversion="1">
+    <javadoc xml:space="preserve"/>
+    <imports>
+        <import target="java.util.*" enable="true"/>
+        <import target="greenfoot.*" enable="true"/>
+    </imports>
+    <implements/>
+    <fields>
+        <variable access="public" type="GifImage" type-java="GifImage" name="Ghost1" value="new GifImage(&quot;Ghost1.gif&quot;)" value-java=" new GifImage(&quot;Ghost1.gif&quot;)" enable="true"/>
+    </fields>
+    <constructors>
+        <constructor access="public" enable="true">
+            <javadoc xml:space="preserve"/>
+            <params/>
+            <throws/>
+            <body/>
+        </constructor>
+    </constructors>
+    <methods>
+        <method access="public" type="void" type-java="void" name="act" enable="true">
+            <javadoc xml:space="preserve">Act - do whatever the Ghost1 wants to do. This method is called whenever the 'Act' or 'Run' button gets pressed in the environment.</javadoc>
+            <params/>
+            <throws/>
+            <body>
+                <call expression="mouvement()" expression-java="mouvement()" enable="true"/>
+                <call expression="wallCollide()" expression-java="wallCollide()" enable="true"/>
+                <call expression="setImage(Ghost1.getCurrentImage())" expression-java="setImage(Ghost1.getCurrentImage())" enable="true"/>
+            </body>
+        </method>
+        <method access="public" type="void" type-java="void" name="mouvement" enable="true">
+            <javadoc xml:space="preserve"/>
+            <params/>
+            <throws/>
+            <body>
+                <call expression="move(3)" expression-java="move(3)" enable="true"/>
+                <blank/>
+            </body>
+        </method>
+        <method access="public" type="void" type-java="void" name="wallCollide" enable="true">
+            <javadoc xml:space="preserve"/>
+            <params/>
+            <throws/>
+            <body>
+                <variable type="int" type-java="int" name="x" value="getX()" value-java="getX()" enable="true"/>
+                <variable type="int" type-java="int" name="y" value="getY()" value-java="getY()" enable="true"/>
+                <if condition="isTouching(Wall_Right.class)" condition-java="isTouching(Wall_Right.class)" enable="true">
+                    <ifStatements>
+                        <call expression="setLocation(getX()-10,getY()-10)" expression-java="setLocation(getX() - 10, getY() - 10)" enable="true"/>
+                        <call expression="turn(90)" expression-java="turn(90)" enable="true"/>
+                    </ifStatements>
+                </if>
+                <if condition="isTouching(Wall_Up.class)" condition-java="isTouching(Wall_Up.class)" enable="true">
+                    <ifStatements>
+                        <call expression="setLocation(getX()+3,getY()+3)" expression-java="setLocation(getX() + 3, getY() + 3)" enable="true"/>
+                    </ifStatements>
+                </if>
+                <if condition="isTouching(Wall_Down.class)" condition-java="isTouching(Wall_Down.class)" enable="true">
+                    <ifStatements>
+                        <call expression="setLocation(getX()-3,getY()-3)" expression-java="setLocation(getX() - 3, getY() - 3)" enable="true"/>
+                    </ifStatements>
+                </if>
+                <if condition="isTouching(Wall_Left.class)" condition-java="isTouching(Wall_Left.class)" enable="true">
+                    <ifStatements>
+                        <call expression="setLocation(getX()+10,getY()+10)" expression-java="setLocation(getX() + 10, getY() + 10)" enable="true"/>
+                        <call expression="turn(90)" expression-java="turn(90)" enable="true"/>
+                    </ifStatements>
+                </if>
+                <if condition="isTouching(Wall.class)" condition-java="isTouching(Wall.class)" enable="true">
+                    <ifStatements>
+                        <call expression="setLocation(getX()-10,getY()+2)" expression-java="setLocation(getX() - 10, getY() + 2)" enable="true"/>
+                    </ifStatements>
+                </if>
+            </body>
+        </method>
+    </methods>
+</class>

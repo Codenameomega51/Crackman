@@ -95,6 +95,7 @@ dependency3.type=UsesDependency
 dependency30.from=Ghost1
 dependency30.to=Wall_Down
 dependency30.type=UsesDependency
+<<<<<<< HEAD
 dependency31.from=Ghost1
 dependency31.to=Wall_Left
 dependency31.type=UsesDependency
@@ -121,10 +122,39 @@ dependency38.to=Ghost1_MM
 dependency38.type=UsesDependency
 dependency39.from=MainMenu
 dependency39.to=Ghost2_MM
+=======
+dependency31.from=World_PlayButton
+dependency31.to=Level
+dependency31.type=UsesDependency
+dependency32.from=LOGO_Group
+dependency32.to=MainMenu
+dependency32.type=UsesDependency
+dependency33.from=Logo
+dependency33.to=SplashScreen2
+dependency33.type=UsesDependency
+dependency34.from=Logo
+dependency34.to=MainMenu
+dependency34.type=UsesDependency
+dependency35.from=Ghost2
+dependency35.to=Wall_Right
+dependency35.type=UsesDependency
+dependency36.from=Ghost1
+dependency36.to=GifImage
+dependency36.type=UsesDependency
+dependency37.from=Ghost1
+dependency37.to=Wall_Right
+dependency37.type=UsesDependency
+dependency38.from=Ghost1
+dependency38.to=Wall_Up
+dependency38.type=UsesDependency
+dependency39.from=Ghost1
+dependency39.to=Wall_Down
+>>>>>>> parent of 887fe30 (highscore, score, lives)
 dependency39.type=UsesDependency
 dependency4.from=Level
 dependency4.to=Tacos
 dependency4.type=UsesDependency
+<<<<<<< HEAD
 dependency40.from=MainMenu
 dependency40.to=Ghost3_MM
 dependency40.type=UsesDependency
@@ -139,6 +169,16 @@ dependency43.to=Level
 dependency43.type=UsesDependency
 dependency5.from=Level
 dependency5.to=Wall_Up
+=======
+dependency40.from=Ghost1
+dependency40.to=Wall_Left
+dependency40.type=UsesDependency
+dependency41.from=Ghost1
+dependency41.to=Wall
+dependency41.type=UsesDependency
+dependency5.from=MainMenu
+dependency5.to=Ghost1_MM
+>>>>>>> parent of 887fe30 (highscore, score, lives)
 dependency5.type=UsesDependency
 dependency6.from=Level
 dependency6.to=Wall_Right
@@ -152,12 +192,21 @@ dependency8.type=UsesDependency
 dependency9.from=Level
 dependency9.to=Lives
 dependency9.type=UsesDependency
+<<<<<<< HEAD
 editor.fx.0.height=943
 editor.fx.0.width=744
 editor.fx.0.x=728
 editor.fx.0.y=0
 height=943
 package.numDependencies=43
+=======
+editor.fx.0.height=735
+editor.fx.0.width=812
+editor.fx.0.x=1054
+editor.fx.0.y=98
+height=1018
+package.numDependencies=41
+>>>>>>> parent of 887fe30 (highscore, score, lives)
 package.numTargets=34
 project.charset=UTF-8
 publish.hasSource=false
@@ -412,7 +461,12 @@ target9.width=120
 target9.x=0
 target9.y=0
 version=3.0.0
+<<<<<<< HEAD
 width=744
 world.lastInstantiated=Level
+=======
+width=1936
+world.lastInstantiated=MainMenu
+>>>>>>> parent of 887fe30 (highscore, score, lives)
 xPosition=0
 yPosition=0

@@ -10,10 +10,13 @@ public class Level extends World
     public static int score = 0;
 <<<<<<< Updated upstream
     public static int lives = 3;
+<<<<<<< HEAD
     public static int highScore;
 =======
 
 >>>>>>> Stashed changes
+=======
+>>>>>>> parent of 887fe30 (highscore, score, lives)
     /**
      * Constructor for objects of class MainMenu.
      */
@@ -99,6 +102,14 @@ public class Level extends World
         addObject(wall_Down5, 736, 777);
         Wall_Down wall_Down6 =  new  Wall_Down();
         addObject(wall_Down6, 782, 777);
+        Lives lives =  new  Lives();
+        addObject(lives, 229, 778);
+        Lives lives2 =  new  Lives();
+        addObject(lives2, 190, 778);
+        Lives lives3 =  new  Lives();
+        addObject(lives3, 108, 778);
+        Lives lives4 =  new  Lives();
+        addObject(lives4, 149, 778);
         Lives lives5 =  new  Lives();
         addObject(lives5, 67, 778);
         Wall_Down wall_Down7 =  new  Wall_Down();
@@ -186,7 +197,6 @@ public class Level extends World
     public void act()
     {
         scoreCount(score);
-        livesCount(lives);
     }
 
     /**
@@ -195,19 +205,22 @@ public class Level extends World
     public void scoreCount(int score)
     {
         showText("Score: " + score, 85, 17);
-        if (highScore < score){
-            highScore = score;
-        }
     }
-
+    
     /**
      * 
      */
-    public void livesCount(int lives)
+    public void livesCount()
     {
+<<<<<<< HEAD
 <<<<<<< Updated upstream
         showText("" + lives, 95, 778);
 =======
 >>>>>>> Stashed changes
+=======
+        for(int i = 0; i < lives; i++){
+            addObject(Lives, _x_, _y_);
+        }
+>>>>>>> parent of 887fe30 (highscore, score, lives)
     }
 }

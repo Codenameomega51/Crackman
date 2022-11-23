@@ -20,6 +20,6 @@ comment6.params=
 comment6.target=void\ poweredUp()
 comment6.text=\r\n\ \r\n
 comment7.params=
-comment7.target=boolean\ defeat()
+comment7.target=void\ defeat()
 comment7.text=\r\n\ \r\n
 numComments=8
