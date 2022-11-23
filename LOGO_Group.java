@@ -47,7 +47,7 @@ public class LOGO_Group extends Actor
             }
         }
         if (fadeOut == 1) {
-            Greenfoot.setWorld( new  MainMenu());
+            Greenfoot.setWorld( new MainMenu());
         }
     }
 }

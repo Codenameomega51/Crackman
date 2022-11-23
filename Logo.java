@@ -45,7 +45,7 @@ public class Logo extends Actor
                 getImage().setTransparency(fadeOut);
                 fadeOut = fadeOut - 2;
                 if (fadeOut == 1) {
-                    Greenfoot.setWorld( new  SplashScreen2());
+                    Greenfoot.setWorld( new SplashScreen2());
                 }
             }
         }
