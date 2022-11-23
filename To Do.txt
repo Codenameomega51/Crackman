@@ -1,4 +1,3 @@
-fix fades
 live system
 highscore system
 animating pacman
@@ -18,3 +17,4 @@ music
 buttons
 backgrounds (maybe)
 resolution fixing (after)
+fix tutorial button

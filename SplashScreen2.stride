@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class name="SplashScreen2" extends="World" extends-java="World" enable="true" strideversion="1">
+    <javadoc xml:space="preserve"/>
+    <imports>
+        <import target="java.util.*" enable="true"/>
+        <import target="greenfoot.*" enable="true"/>
+    </imports>
+    <implements/>
+    <fields/>
+    <constructors>
+        <constructor access="public" enable="true">
+            <javadoc xml:space="preserve">Constructor for objects of class SplashScreen2.</javadoc>
+            <params/>
+            <throws/>
+            <delegate target="super" params="900,800,1" params-java="900, 800, 1"/>
+            <body>
+                <call expression="prepare()" expression-java="prepare()" enable="true"/>
+            </body>
+        </constructor>
+    </constructors>
+    <methods>
+        <method access="private" type="void" type-java="void" name="prepare" enable="true">
+            <javadoc xml:space="preserve">Prepare the world for the start of the program. That is: create the initial objects and add them to the world.</javadoc>
+            <params/>
+            <throws/>
+            <body>
+                <variable type="LOGO_Group" type-java="LOGO_Group" name="lOGO_Group" value="new LOGO_Group()" value-java=" new LOGO_Group()" enable="true"/>
+                <call expression="lOGO_Group.getImage().setTransparency(0)" expression-java="lOGO_Group.getImage().setTransparency(0)" enable="true"/>
+                <call expression="addObject(lOGO_Group,getWidth()/2,getHeight()/2)" expression-java="addObject(lOGO_Group, getWidth() / 2, getHeight() / 2)" enable="true"/>
+            </body>
+        </method>
+    </methods>
+</class>

@@ -10,44 +10,34 @@ public class LOGO_Group extends Actor
 {
     private int fadeIn = 0;
     private int fadeOut = 255;
-    private int timer = 1000;
+    private int timer = 0;
+    private int timer2 = 0;
+    private int timerWait = 0;
 
     /**
-     * Act - do whatever the LOGO_Group wants to do. This method is called whenever the 'Act' or 'Run' button gets pressed in the environment.
+     * Act - do whatever the Logo wants to do. This method is called whenever the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act()
     {
-        fade();
+        setter();
     }
 
     /**
      * 
      */
-    public void fade()
+    public void setter()
     {
-        while (timer >= 1) {
-            timer = timer - 1;
-            if (timer == 0) {
-                while (fadeIn < 254) {
-                    getImage().setTransparency(fadeIn);
-                    fadeIn = fadeIn + 2;
-                }
-            }
+        timerWait = timerWait + 1;
+        timer = timer + 2;
+        if (timer <= 244) {
+            getImage().setTransparency(timer);
         }
-        while (timer <= 999) {
-            timer = timer + 1;
+        if (timer > 244 && timerWait > 244) {
+            timer2 = timer2 + 2;
+            getImage().setTransparency(244 - timer2);
         }
-        if (timer == 1000) {
-            while (fadeOut > 1) {
-                while (timer >= 900) {
-                    timer = timer - 1;
-                }
-                getImage().setTransparency(fadeOut);
-                fadeOut = fadeOut - 2;
-            }
-        }
-        if (fadeOut == 1) {
-            Greenfoot.setWorld( new MainMenu());
+        if (Greenfoot.mouseClicked(this) || timer2 == 244 || Greenfoot.isKeyDown("space")) {
+            Greenfoot.setWorld( new  MainMenu());
         }
     }
 }

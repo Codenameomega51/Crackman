@@ -1,3 +1,4 @@
+// WARNING: This file is auto-generated and any changes to it will be overwritten
 import lang.stride.*;
 import java.util.*;
 import greenfoot.*;
@@ -30,9 +31,8 @@ public class MainMenu extends World
         World_PlayButton world_PlayButton =  new  World_PlayButton();
         addObject(world_PlayButton, 450, 415);
         world_CrackMan.setLocation(183, 118);
-        World_TutorialButton world_TutorialButton = new World_TutorialButton();
-        addObject(world_TutorialButton,435,516);
-
+        World_TutorialButton world_TutorialButton =  new  World_TutorialButton();
+        addObject(world_TutorialButton, 435, 516);
     }
 
     /**
@@ -40,8 +40,5 @@ public class MainMenu extends World
      */
     public void act()
     {
-        
     }
-    
-    
 }

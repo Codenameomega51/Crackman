@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<class name="LOGO_Group" extends="Actor" extends-java="Actor" enable="true" strideversion="1">
+<class name="Logo" extends="Actor" extends-java="Actor" enable="true" strideversion="1">
     <javadoc xml:space="preserve"/>
     <imports>
         <import target="java.util.*" enable="true"/>
@@ -12,18 +12,9 @@
         <variable access="private" type="int" type-java="int" name="timer" value="0" value-java="0" enable="true"/>
         <variable access="private" type="int" type-java="int" name="timer2" value="0" value-java="0" enable="true"/>
         <variable access="private" type="int" type-java="int" name="timerWait" value="0" value-java="0" enable="true"/>
-        <variable access="private" type="int" type-java="int" name="timer" value="1000" value-java="1000" enable="false"/>
     </fields>
     <constructors/>
     <methods>
-        <method access="public" type="void" type-java="void" name="act" enable="false">
-            <javadoc xml:space="preserve">Act - do whatever the LOGO_Group wants to do. This method is called whenever the 'Act' or 'Run' button gets pressed in the environment.</javadoc>
-            <params/>
-            <throws/>
-            <body>
-                <call expression="fade()" expression-java="fade()" enable="false"/>
-            </body>
-        </method>
         <method access="public" type="void" type-java="void" name="act" enable="true">
             <javadoc xml:space="preserve">Act - do whatever the Logo wants to do. This method is called whenever the 'Act' or 'Run' button gets pressed in the environment.</javadoc>
             <params/>
@@ -50,12 +41,23 @@
                         <call expression="getImage().setTransparency(244-timer2)" expression-java="getImage().setTransparency(244 - timer2)" enable="true"/>
                     </ifStatements>
                 </if>
-                <if condition="Greenfoot.mouseClicked(this)||timer2==244||Greenfoot.isKeyDown(&quot;space&quot;)" condition-java="Greenfoot.mouseClicked(this) || timer2 == 244 || Greenfoot.isKeyDown(&quot;space&quot;)" enable="true">
+                <if condition="timer2==244" condition-java="timer2 == 244" enable="true">
+                    <ifStatements>
+                        <call expression="Greenfoot.setWorld(new SplashScreen2())" expression-java="Greenfoot.setWorld( new SplashScreen2())" enable="true"/>
+                    </ifStatements>
+                </if>
+                <if condition="Greenfoot.mouseClicked(this)||Greenfoot.isKeyDown(&quot;space&quot;)" condition-java="Greenfoot.mouseClicked(this) || Greenfoot.isKeyDown(&quot;space&quot;)" enable="true">
                     <ifStatements>
                         <call expression="Greenfoot.setWorld(new MainMenu())" expression-java="Greenfoot.setWorld( new MainMenu())" enable="true"/>
                     </ifStatements>
                 </if>
             </body>
+        </method>
+        <method access="public" type="void" type-java="void" name="fade" enable="true">
+            <javadoc xml:space="preserve"/>
+            <params/>
+            <throws/>
+            <body/>
         </method>
     </methods>
 </class>

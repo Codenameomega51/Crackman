@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class name="MainMenu" extends="World" extends-java="World" enable="true" strideversion="1">
+    <javadoc xml:space="preserve"/>
+    <imports>
+        <import target="java.util.*" enable="true"/>
+        <import target="greenfoot.*" enable="true"/>
+    </imports>
+    <implements/>
+    <fields/>
+    <constructors>
+        <constructor access="public" enable="true">
+            <javadoc xml:space="preserve">Constructor for objects of class MainMenu.</javadoc>
+            <params/>
+            <throws/>
+            <delegate target="super" params="900,800,1" params-java="900, 800, 1"/>
+            <body>
+                <call expression="prepare()" expression-java="prepare()" enable="true"/>
+                <call expression="act()" expression-java="act()" enable="true"/>
+            </body>
+        </constructor>
+    </constructors>
+    <methods>
+        <method access="private" type="void" type-java="void" name="prepare" enable="true">
+            <javadoc xml:space="preserve">Prepare the world for the start of the program. That is: create the initial objects and add them to the world.</javadoc>
+            <params/>
+            <throws/>
+            <body>
+                <variable type="LOGO_GameName" type-java="LOGO_GameName" name="lOGO_GameName" value="new LOGO_GameName()" value-java=" new LOGO_GameName()" enable="true"/>
+                <call expression="addObject(lOGO_GameName,458,183)" expression-java="addObject(lOGO_GameName, 458, 183)" enable="true"/>
+                <variable type="World_CrackMan" type-java="World_CrackMan" name="world_CrackMan" value="new World_CrackMan()" value-java=" new World_CrackMan()" enable="true"/>
+                <call expression="addObject(world_CrackMan,41,290)" expression-java="addObject(world_CrackMan, 41, 290)" enable="true"/>
+                <variable type="World_PlayButton" type-java="World_PlayButton" name="world_PlayButton" value="new World_PlayButton()" value-java=" new World_PlayButton()" enable="true"/>
+                <call expression="addObject(world_PlayButton,450,415)" expression-java="addObject(world_PlayButton, 450, 415)" enable="true"/>
+                <call expression="world_CrackMan.setLocation(183,118)" expression-java="world_CrackMan.setLocation(183, 118)" enable="true"/>
+                <variable type="World_TutorialButton" type-java="World_TutorialButton" name="world_TutorialButton" value="new World_TutorialButton()" value-java=" new World_TutorialButton()" enable="true"/>
+                <call expression="addObject(world_TutorialButton,435,516)" expression-java="addObject(world_TutorialButton, 435, 516)" enable="true"/>
+            </body>
+        </method>
+        <method access="public" type="void" type-java="void" name="act" enable="true">
+            <javadoc xml:space="preserve"/>
+            <params/>
+            <throws/>
+            <body/>
+        </method>
+    </methods>
+</class>

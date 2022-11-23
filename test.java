@@ -6,7 +6,7 @@ import greenfoot.*;
 /**
  * 
  */
-public class World_PlayButton extends Actor
+public class test extends Actor
 {
 
     /**
@@ -18,7 +18,7 @@ public class World_PlayButton extends Actor
             setImage("PlayButton.png");
         }
         if (Greenfoot.mouseMoved(this)) {
-            setImage("newPlay.png");
+            setImage("PlayNew.png");
         }
         if (Greenfoot.mouseClicked(this)) {
             World levelWorld =  new  Level();
