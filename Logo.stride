@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<class name="LOGO_Group" extends="Actor" extends-java="Actor" enable="true" strideversion="1">
+<class name="Logo" extends="Actor" extends-java="Actor" enable="true" strideversion="1">
     <javadoc xml:space="preserve"/>
     <imports>
         <import target="java.util.*" enable="true"/>
@@ -9,12 +9,12 @@
     <fields>
         <variable access="private" type="int" type-java="int" name="fadeIn" value="0" value-java="0" enable="true"/>
         <variable access="private" type="int" type-java="int" name="fadeOut" value="255" value-java="255" enable="true"/>
-        <variable access="private" type="int" type-java="int" name="timer" value="1000" value-java="1000" enable="true"/>
+        <variable access="private" type="int" type-java="int" name="timer" value="10000" value-java="10000" enable="true"/>
     </fields>
     <constructors/>
     <methods>
         <method access="public" type="void" type-java="void" name="act" enable="true">
-            <javadoc xml:space="preserve">Act - do whatever the LOGO_Group wants to do. This method is called whenever the 'Act' or 'Run' button gets pressed in the environment.</javadoc>
+            <javadoc xml:space="preserve">Act - do whatever the Logo wants to do. This method is called whenever the 'Act' or 'Run' button gets pressed in the environment.</javadoc>
             <params/>
             <throws/>
             <body>
@@ -48,14 +48,32 @@
                             </while>
                             <call expression="getImage().setTransparency(fadeOut)" expression-java="getImage().setTransparency(fadeOut)" enable="true"/>
                             <assign dest="fadeOut" dest-java="fadeOut" src="fadeOut-2" src-java="fadeOut - 2" enable="true"/>
+                            <if condition="fadeOut==1" condition-java="fadeOut == 1" enable="true">
+                                <ifStatements>
+                                    <call expression="Greenfoot.setWorld(new SplashScreen2())" expression-java="Greenfoot.setWorld( new SplashScreen2())" enable="true"/>
+                                </ifStatements>
+                            </if>
                         </while>
                     </ifStatements>
                 </if>
-                <if condition="fadeOut==1" condition-java="fadeOut == 1" enable="true">
-                    <ifStatements>
-                        <call expression="Greenfoot.setWorld(new MainMenu())" expression-java="Greenfoot.setWorld( new MainMenu())" enable="true"/>
-                    </ifStatements>
-                </if>
+            </body>
+        </method>
+        <method access="public" type="void" type-java="void" name="fade" enable="false">
+            <javadoc xml:space="preserve"/>
+            <params/>
+            <throws/>
+            <body>
+                <while condition="fadeIn&lt;254" condition-java="fadeIn &lt; 254" enable="false">
+                    <call expression="Greenfoot.delay(1)" expression-java="Greenfoot.delay(1)" enable="false"/>
+                    <call expression="getImage().setTransparency(fadeIn)" expression-java="getImage().setTransparency(fadeIn)" enable="false"/>
+                    <assign dest="fadeIn" dest-java="fadeIn" src="fadeIn+2" src-java="fadeIn + 2" enable="false"/>
+                </while>
+                <call expression="Greenfoot.delay(200)" expression-java="Greenfoot.delay(200)" enable="false"/>
+                <while condition="fadeOut&gt;1" condition-java="fadeOut &gt; 1" enable="false">
+                    <call expression="Greenfoot.delay(1)" expression-java="Greenfoot.delay(1)" enable="false"/>
+                    <call expression="getImage().setTransparency(fadeOut)" expression-java="getImage().setTransparency(fadeOut)" enable="false"/>
+                    <assign dest="fadeOut" dest-java="fadeOut" src="fadeOut-2" src-java="fadeOut - 2" enable="false"/>
+                </while>
             </body>
         </method>
     </methods>

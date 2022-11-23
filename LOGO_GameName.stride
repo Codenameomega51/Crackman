@@ -6,7 +6,10 @@
         <import target="greenfoot.*" enable="true"/>
     </imports>
     <implements/>
-    <fields/>
+    <fields>
+        <variable access="private" type="int" type-java="int" name="fadeIn" value="0" value-java="0" enable="true"/>
+        <variable access="private" type="int" type-java="int" name="fadeOut" value="255" value-java="255" enable="true"/>
+    </fields>
     <constructors>
         <constructor access="public" enable="true">
             <javadoc xml:space="preserve"/>

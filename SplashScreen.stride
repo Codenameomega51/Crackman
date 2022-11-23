@@ -7,7 +7,9 @@
         <import target="lang.stride.*" enable="true"/>
     </imports>
     <implements/>
-    <fields/>
+    <fields>
+        <variable access="private" type="int" type-java="int" name="timer" enable="true"/>
+    </fields>
     <constructors>
         <constructor access="public" enable="true">
             <javadoc xml:space="preserve">Constructor for objects of class SplashScreen.</javadoc>
@@ -20,30 +22,34 @@
         </constructor>
     </constructors>
     <methods>
-        <method access="public" type="void" type-java="void" name="act" enable="true">
+        <method access="public" type="void" type-java="void" name="act" enable="false">
             <javadoc xml:space="preserve"/>
             <params/>
             <throws/>
             <body>
-                <if condition="exit()" condition-java="exit()" enable="true">
+                <if condition="exit()" condition-java="exit()" enable="false">
                     <ifStatements>
-                        <call expression="Greenfoot.setWorld(new MainMenu())" expression-java="Greenfoot.setWorld( new MainMenu())" enable="true"/>
+                        <call expression="Greenfoot.setWorld(new SplashScreen2())" expression-java="Greenfoot.setWorld( new SplashScreen2())" enable="false"/>
                     </ifStatements>
                 </if>
             </body>
         </method>
-        <method access="public" type="boolean" type-java="boolean" name="exit" enable="true">
+        <method access="public" type="boolean" type-java="boolean" name="exit" enable="false">
             <javadoc xml:space="preserve"/>
             <params/>
             <throws/>
             <body>
-                <variable type="boolean" type-java="boolean" name="skip" value="false" value-java="false" enable="true"/>
-                <if condition="Greenfoot.isKeyDown(&quot;space&quot;)" condition-java="Greenfoot.isKeyDown(&quot;space&quot;)" enable="true">
-                    <ifStatements>
-                        <assign dest="skip" dest-java="skip" src="true" src-java="true" enable="true"/>
-                    </ifStatements>
-                </if>
-                <return value="skip" value-java="skip" enable="true"/>
+                <variable type="boolean" type-java="boolean" name="skip" value="false" value-java="false" enable="false"/>
+                <assign dest="timer" dest-java="timer" src="0" src-java="0" enable="false"/>
+                <while condition="timer&lt;=20000" condition-java="timer &lt;= 20000" enable="false">
+                    <assign dest="timer" dest-java="timer" src="timer+1" src-java="timer + 1" enable="false"/>
+                    <if condition="timer&gt;=20001||Greenfoot.isKeyDown(&quot;space&quot;)" condition-java="timer &gt;= 20001 || Greenfoot.isKeyDown(&quot;space&quot;)" enable="false">
+                        <ifStatements>
+                            <assign dest="skip" dest-java="skip" src="true" src-java="true" enable="false"/>
+                        </ifStatements>
+                    </if>
+                </while>
+                <return value="skip" value-java="skip" enable="false"/>
             </body>
         </method>
         <method access="private" type="void" type-java="void" name="prepare" enable="true">
@@ -52,14 +58,8 @@ That is: create the initial objects and add them to the world.</javadoc>
             <params/>
             <throws/>
             <body>
-                <variable type="LOGO_Group" type-java="LOGO_Group" name="lOGO_Group" value="new LOGO_Group()" value-java=" new LOGO_Group()" enable="true"/>
-                <call expression="addObject(lOGO_Group,300,400)" expression-java="addObject(lOGO_Group, 300, 400)" enable="true"/>
-                <variable type="LOGOSchool" type-java="LOGOSchool" name="lOGOSchool" value="new LOGOSchool()" value-java=" new LOGOSchool()" enable="true"/>
-                <call expression="addObject(lOGOSchool,getWidth()/2,750)" expression-java="addObject(lOGOSchool, getWidth() / 2, 750)" enable="true"/>
-                <variable type="LOGO_GroupNames" type-java="LOGO_GroupNames" name="lOGO_GroupNames" value="new LOGO_GroupNames()" value-java=" new LOGO_GroupNames()" enable="true"/>
-                <call expression="addObject(lOGO_GroupNames,560,405)" expression-java="addObject(lOGO_GroupNames, 560, 405)" enable="true"/>
-                <variable type="LOGO_CourseName" type-java="LOGO_CourseName" name="lOGO_CourseName" value="new LOGO_CourseName()" value-java=" new LOGO_CourseName()" enable="true"/>
-                <call expression="addObject(lOGO_CourseName,450,218)" expression-java="addObject(lOGO_CourseName, 450, 218)" enable="true"/>
+                <variable type="Logo" type-java="Logo" name="logo" value="new Logo()" value-java=" new Logo()" enable="true"/>
+                <call expression="addObject(logo,getWidth()/2,getHeight()/2)" expression-java="addObject(logo, getWidth() / 2, getHeight() / 2)" enable="true"/>
             </body>
         </method>
     </methods>

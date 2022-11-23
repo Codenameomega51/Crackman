@@ -1,0 +1,20 @@
+fix fades
+live system
+highscore system
+animating pacman
+animating cracked pacman
+animating ghost
+animating scared ghosts
+coding the ghosts
+making walls
+drawing/downloading maze walls
+coding them
+tutorial screen
+difficulty selection (low priority)
+replay system
+increase difficulty after level completed
+sound effects
+music
+buttons
+backgrounds (maybe)
+resolution fixing (after)

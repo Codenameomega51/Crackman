@@ -6,14 +6,14 @@ import greenfoot.*;
 /**
  * 
  */
-public class LOGO_Group extends Actor
+public class Logo extends Actor
 {
     private int fadeIn = 0;
     private int fadeOut = 255;
-    private int timer = 1000;
+    private int timer = 10000;
 
     /**
-     * Act - do whatever the LOGO_Group wants to do. This method is called whenever the 'Act' or 'Run' button gets pressed in the environment.
+     * Act - do whatever the Logo wants to do. This method is called whenever the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act()
     {
@@ -44,10 +44,10 @@ public class LOGO_Group extends Actor
                 }
                 getImage().setTransparency(fadeOut);
                 fadeOut = fadeOut - 2;
+                if (fadeOut == 1) {
+                    Greenfoot.setWorld( new  SplashScreen2());
+                }
             }
-        }
-        if (fadeOut == 1) {
-            Greenfoot.setWorld( new  MainMenu());
         }
     }
 }

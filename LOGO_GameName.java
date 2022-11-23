@@ -8,6 +8,8 @@ import greenfoot.*;
  */
 public class LOGO_GameName extends Actor
 {
+    private int fadeIn = 0;
+    private int fadeOut = 255;
 
     /**
      * 
