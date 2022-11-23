@@ -1,4 +1,3 @@
-// WARNING: This file is auto-generated and any changes to it will be overwritten
 import lang.stride.*;
 import java.util.*;
 import greenfoot.*;
@@ -45,7 +44,7 @@ public class Logo extends Actor
                 getImage().setTransparency(fadeOut);
                 fadeOut = fadeOut - 2;
                 if (fadeOut == 1) {
-                    Greenfoot.setWorld( new SplashScreen2());
+                    Greenfoot.setWorld( new  SplashScreen2());
                 }
             }
         }

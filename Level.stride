@@ -175,6 +175,8 @@
                 <call expression="wall_Down11.setLocation(721,427)" expression-java="wall_Down11.setLocation(721, 427)" enable="true"/>
                 <call expression="removeObject(wall_Down11)" expression-java="removeObject(wall_Down11)" enable="true"/>
                 <call expression="removeObject(wall_Right10)" expression-java="removeObject(wall_Right10)" enable="true"/>
+                <variable type="Wall" type-java="Wall" name="wall3" value="new Wall()" value-java=" new Wall()" enable="true"/>
+                <call expression="addObject(wall3,254,380)" expression-java="addObject(wall3, 254, 380)" enable="true"/>
             </body>
         </method>
         <method access="public" type="void" type-java="void" name="act" enable="true">

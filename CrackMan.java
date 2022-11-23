@@ -93,6 +93,21 @@ public class CrackMan extends Actor
             setLocation(getX() + 2, getY() + 2);
             direction = 0;
         }
+        Actor wall;
+        wall = getOneIntersectingObject(Wall.class);
+        if (wall != null) {
+
+            if(direction == 3) {
+                setLocation(getX()+2,getY());
+                direction = 0;
+            } else if (direction == 2){
+                 setLocation(getX(),getY()+3);
+                direction = 0;
+            }
+            else { setLocation(getX()-2,getY()-2);
+                direction = 0;}
+        }
+
     }
 
     /**

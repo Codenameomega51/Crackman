@@ -28,8 +28,11 @@ public class MainMenu extends World
         World_CrackMan world_CrackMan =  new  World_CrackMan();
         addObject(world_CrackMan, 41, 290);
         World_PlayButton world_PlayButton =  new  World_PlayButton();
-        addObject(world_PlayButton, 450, 615);
+        addObject(world_PlayButton, 450, 415);
         world_CrackMan.setLocation(183, 118);
+        World_TutorialButton world_TutorialButton = new World_TutorialButton();
+        addObject(world_TutorialButton,435,516);
+
     }
 
     /**
