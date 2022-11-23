@@ -37,10 +37,10 @@ public class Logo extends Actor
             getImage().setTransparency(244 - timer2);
         }
         if (timer2 == 244) {
-            Greenfoot.setWorld( new  SplashScreen2());
+            Greenfoot.setWorld( new SplashScreen2());
         }
         if (Greenfoot.mouseClicked(this) || Greenfoot.isKeyDown("space")) {
-            Greenfoot.setWorld( new  MainMenu());
+            Greenfoot.setWorld( new MainMenu());
         }
     }
 

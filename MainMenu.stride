@@ -34,6 +34,17 @@
                 <call expression="world_CrackMan.setLocation(183,118)" expression-java="world_CrackMan.setLocation(183, 118)" enable="true"/>
                 <variable type="World_TutorialButton" type-java="World_TutorialButton" name="world_TutorialButton" value="new World_TutorialButton()" value-java=" new World_TutorialButton()" enable="true"/>
                 <call expression="addObject(world_TutorialButton,435,516)" expression-java="addObject(world_TutorialButton, 435, 516)" enable="true"/>
+                <call expression="world_TutorialButton.setLocation(450,498)" expression-java="world_TutorialButton.setLocation(450, 498)" enable="true"/>
+                <variable type="Ghost1_MM" type-java="Ghost1_MM" name="ghost1_MM" value="new Ghost1_MM()" value-java=" new Ghost1_MM()" enable="true"/>
+                <call expression="addObject(ghost1_MM,338,111)" expression-java="addObject(ghost1_MM, 338, 111)" enable="true"/>
+                <variable type="Ghost2_MM" type-java="Ghost2_MM" name="ghost2_MM" value="new Ghost2_MM()" value-java=" new Ghost2_MM()" enable="true"/>
+                <call expression="addObject(ghost2_MM,424,267)" expression-java="addObject(ghost2_MM, 424, 267)" enable="true"/>
+                <variable type="Ghost3_MM" type-java="Ghost3_MM" name="ghost3_MM" value="new Ghost3_MM()" value-java=" new Ghost3_MM()" enable="true"/>
+                <call expression="addObject(ghost3_MM,779,113)" expression-java="addObject(ghost3_MM, 779, 113)" enable="true"/>
+                <variable type="Ghost4_MM" type-java="Ghost4_MM" name="ghost4_MM" value="new Ghost4_MM()" value-java=" new Ghost4_MM()" enable="true"/>
+                <call expression="addObject(ghost4_MM,624,267)" expression-java="addObject(ghost4_MM, 624, 267)" enable="true"/>
+                <variable type="Ghost5_MM" type-java="Ghost5_MM" name="ghost5_MM" value="new Ghost5_MM()" value-java=" new Ghost5_MM()" enable="true"/>
+                <call expression="addObject(ghost5_MM,148,276)" expression-java="addObject(ghost5_MM, 148, 276)" enable="true"/>
             </body>
         </method>
         <method access="public" type="void" type-java="void" name="act" enable="true">

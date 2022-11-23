@@ -37,7 +37,7 @@ public class LOGO_Group extends Actor
             getImage().setTransparency(244 - timer2);
         }
         if (Greenfoot.mouseClicked(this) || timer2 == 244 || Greenfoot.isKeyDown("space")) {
-            Greenfoot.setWorld( new  MainMenu());
+            Greenfoot.setWorld( new MainMenu());
         }
     }
 }

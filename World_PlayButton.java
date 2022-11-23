@@ -21,7 +21,7 @@ public class World_PlayButton extends Actor
             setImage("newPlay.png");
         }
         if (Greenfoot.mouseClicked(this)) {
-            World levelWorld =  new  Level();
+            World levelWorld =  new Level();
             Greenfoot.setWorld(levelWorld);
         }
     }

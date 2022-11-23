@@ -24,7 +24,7 @@ public class SplashScreen extends World
      */
     private void prepare()
     {
-        Logo logo =  new  Logo();
+        Logo logo =  new Logo();
         addObject(logo, getWidth() / 2, getHeight() / 2);
     }
 }

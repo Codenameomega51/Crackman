@@ -5,7 +5,7 @@ animating cracked pacman
 animating ghost
 animating scared ghosts
 coding the ghosts
-making walls
+making walls (fixing them too)
 drawing/downloading maze walls
 coding them
 tutorial screen
