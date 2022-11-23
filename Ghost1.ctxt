@@ -13,4 +13,6 @@ comment3.text=\r\n\ \r\n
 comment4.params=
 comment4.target=void\ wallCollide()
 comment4.text=\r\n\ \r\n
-numComments=5
+comment5.params=
+comment5.target=boolean\ win()
+numComments=6

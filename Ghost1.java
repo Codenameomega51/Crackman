@@ -1,4 +1,3 @@
-// WARNING: This file is auto-generated and any changes to it will be overwritten
 import lang.stride.*;
 import java.util.*;
 import greenfoot.*;
@@ -22,7 +21,9 @@ public class Ghost1 extends Ghosts
      */
     public void act()
     {
-        mouvement();
+        if (!(win())){
+            mouvement();
+        }
         wallCollide();
         setImage(Ghost1.getCurrentImage());
     }
@@ -33,7 +34,7 @@ public class Ghost1 extends Ghosts
     public void mouvement()
     {
         move(3);
-        
+
     }
 
     /**
@@ -60,5 +61,14 @@ public class Ghost1 extends Ghosts
         if (isTouching(Wall.class)) {
             setLocation(getX() - 10, getY() + 2);
         }
+    }
+
+    public boolean win(){
+        boolean win = false;
+        Actor cracked = getOneIntersectingObject(CrackMan.class);
+        if (cracked != null){
+            win = true;
+        }
+        return win;
     }
 }

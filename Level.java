@@ -9,6 +9,7 @@ public class Level extends World
 {
     public static int score = 0;
     public static int lives = 3;
+    public static int highScore;
     /**
      * Constructor for objects of class MainMenu.
      */
@@ -94,14 +95,6 @@ public class Level extends World
         addObject(wall_Down5, 736, 777);
         Wall_Down wall_Down6 =  new  Wall_Down();
         addObject(wall_Down6, 782, 777);
-        Lives lives =  new  Lives();
-        addObject(lives, 229, 778);
-        Lives lives2 =  new  Lives();
-        addObject(lives2, 190, 778);
-        Lives lives3 =  new  Lives();
-        addObject(lives3, 108, 778);
-        Lives lives4 =  new  Lives();
-        addObject(lives4, 149, 778);
         Lives lives5 =  new  Lives();
         addObject(lives5, 67, 778);
         Wall_Down wall_Down7 =  new  Wall_Down();
@@ -184,6 +177,7 @@ public class Level extends World
     public void act()
     {
         scoreCount(score);
+        livesCount(lives);
     }
 
     /**
@@ -192,15 +186,16 @@ public class Level extends World
     public void scoreCount(int score)
     {
         showText("Score: " + score, 85, 17);
+        if (highScore < score){
+            highScore = score;
+        }
     }
-    
+
     /**
      * 
      */
-    public void livesCount()
+    public void livesCount(int lives)
     {
-        for(int i = 0; i < lives; i++){
-            addObject(Lives, _x_, _y_);
-        }
+        showText("" + lives, 95, 778);
     }
 }
