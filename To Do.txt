@@ -1,20 +1,15 @@
-live system
-highscore system
+live system (to be fixed)
+LOSS SCREEN / RETRY
+highscore system (to be finished up when creating a loss screen)
 animating pacman
 animating cracked pacman
 animating ghost
 animating scared ghosts
 coding the ghosts
-making walls (fixing them too)
-drawing/downloading maze walls
-coding them
+fixing the walls
 tutorial screen
 difficulty selection (low priority)
-replay system
 increase difficulty after level completed
 sound effects
 music
-buttons
 backgrounds (maybe)
-resolution fixing (after)
-fix tutorial button
