@@ -24,6 +24,7 @@ public class Level extends World
      */
     private void prepare()
     {
+        lives = 3;
         Ghost1 ghost1 =  new  Ghost1();
         addObject(ghost1, 503, 558);
         CrackMan crackMan =  new  CrackMan();
