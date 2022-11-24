@@ -1,3 +1,4 @@
+// WARNING: This file is auto-generated and any changes to it will be overwritten
 import lang.stride.*;
 import java.util.*;
 import greenfoot.*;
@@ -28,9 +29,7 @@ public class CrackMan extends Actor
      */
     public void act()
     {
-        if (!(defeat())){
-            moving();
-        }
+        moving();
         eatTacos();
         if (eatPowerup()) {
             poweredUp();
@@ -104,7 +103,7 @@ public class CrackMan extends Actor
                 direction = 0;
             }
             else if (direction == 2) {
-                setLocation(getX(), getY() + 3);
+                setLocation(getX(), getY() - 3);
                 direction = 0;
             }
             else {
@@ -177,25 +176,8 @@ public class CrackMan extends Actor
     /**
      * 
      */
-    public boolean defeat()
+    public void defeat()
     {
-        boolean ate = false;
-        Actor ghost1 = getOneIntersectingObject(Ghost1.class);
-        Actor ghost2 = getOneIntersectingObject(Ghost2.class);
-        Actor ghost3 = getOneIntersectingObject(Ghost3.class);
-        Actor ghost4 = getOneIntersectingObject(Ghost4.class);
-        Actor ghost5 = getOneIntersectingObject(Ghost5.class);
-        if (ghost1 != null || ghost2 != null || ghost3 != null || ghost4 != null 
-        || ghost5 != null) {
-            //Saving score problem (possibly fixable by retry button upon loss)
-            //infinite loss porblem
-            ate = true;
-            Level.lives = Level.lives - 1;
-            if (Level.lives == 0) {
-                World lost = new Lost();
-                Greenfoot.setWorld(lost);
-            }
-        }
-        return ate;
+        Actor ghosted = getOneIntersectingObject(Ghosts.class);
     }
 }

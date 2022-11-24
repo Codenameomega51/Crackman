@@ -8,7 +8,7 @@ import greenfoot.*;
 public class WallHorizontal extends Actor
 {
     public WallHorizontal(){
-        getImage().scale(200, 35);
+        //getImage().scale(200, 35);
 
     }
 

@@ -8,8 +8,12 @@ import greenfoot.*;
 public class Level extends World
 {
     public static int score = 0;
+<<<<<<< Updated upstream
     public static int lives = 3;
     public static int highScore;
+=======
+
+>>>>>>> Stashed changes
     /**
      * Constructor for objects of class MainMenu.
      */
@@ -167,8 +171,13 @@ public class Level extends World
         removeObject(wall_Right10);
         Wall wall3 =  new  Wall();
         addObject(wall3, 264, 380);
-        WallHorizontal wallHorizontal =  new  WallHorizontal();
-        addObject(wallHorizontal, 243, 205);
+
+        WallHorizontal wallHorizontal = new WallHorizontal();
+        addObject(wallHorizontal,243,205);
+        Wall wall4 = new Wall();
+        addObject(wall4,583,170);
+        WallHorizontal wallHorizontal2 = new WallHorizontal();
+        addObject(wallHorizontal2,523,289);
     }
 
     /**
@@ -196,6 +205,9 @@ public class Level extends World
      */
     public void livesCount(int lives)
     {
+<<<<<<< Updated upstream
         showText("" + lives, 95, 778);
+=======
+>>>>>>> Stashed changes
     }
 }
