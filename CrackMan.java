@@ -167,6 +167,11 @@ public class CrackMan extends Actor
             timer = timer - 1;
             if (timer >= 1) {
                 move(spedUp);
+                if (direction == 3){
+                    setImage("crackedUp.png");
+                } else {
+                    setImage("cracked.png");
+                }
             }
         }
         else {
