@@ -14,6 +14,8 @@ public class CrackMan extends Actor
     private int timer;
     private int spedUp = speed + 2;
     private int score = 0;
+    public GifImage Crackman =  new  GifImage("CrackmanClosed.gif");
+    public GifImage CrackmanLeft =  new  GifImage("CrackmanClosedLeft.gif");
 
     /**
      * 
@@ -35,6 +37,7 @@ public class CrackMan extends Actor
         if (eatPowerup()) {
             poweredUp();
         }
+
     }
 
     /**
@@ -58,26 +61,26 @@ public class CrackMan extends Actor
         }
         if (direction == 1) {
             x = x + 2;
-            setImage("Crackman_Right.png");
+            setImage(Crackman.getCurrentImage());
             setRotation(0);
         }
         if (direction == 2) {
             y = y - 2;
-            setImage("Crackman_Right.png");
+            setImage(Crackman.getCurrentImage());
             setRotation(270);
         }
         if (direction == 3) {
             x = x - 2;
-            setImage("Crackman.png");
+            setImage(CrackmanLeft.getCurrentImage());
             setRotation(180);
         }
         if (direction == 4) {
             y = y + 2;
-            setImage("Crackman_Right.png");
+            setImage(Crackman.getCurrentImage());
             setRotation(90);
         }
         setLocation(x, y);
-        /* Need to fix the sliding bug  and the teleportation for the maze wall*/
+
         if (isTouching(Wall_Right.class)) {
             setLocation(getX() - 2, getY() - 2);
             direction = 0;
@@ -94,6 +97,10 @@ public class CrackMan extends Actor
             setLocation(getX() + 2, getY() + 2);
             direction = 0;
         }
+        wall();
+    }
+
+    public void wall(){
         Actor wall_V;
         Actor wall_H;
         wall_V = getOneIntersectingObject(Wall.class);
@@ -180,6 +187,7 @@ public class CrackMan extends Actor
         else {
             move(speed);
         }
+        wall();
     }
 
     /**

@@ -21,5 +21,15 @@ public class World_TutorialButton extends Actor
      */
     public void act()
     {
+        if (Greenfoot.mouseMoved(getWorld())) {
+            setImage("TutorialButton.png");
+        }
+        if (Greenfoot.mouseMoved(this)) {
+            setImage("newTutorial.png");
+        }
+        if (Greenfoot.mouseClicked(this)) {
+            World tutWorld =  new  Tutorial();
+            Greenfoot.setWorld(tutWorld);
+        }
     }
 }

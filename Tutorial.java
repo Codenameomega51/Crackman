@@ -13,6 +13,6 @@ public class Tutorial extends World
      */
     public Tutorial()
     {
-        super(900, 900, 1);
+        super(900, 800, 1);
     }
 }

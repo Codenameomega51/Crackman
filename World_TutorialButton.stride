@@ -20,7 +20,24 @@
             <javadoc xml:space="preserve">Act - do whatever the World_TutorialButton wants to do. This method is called whenever the 'Act' or 'Run' button gets pressed in the environment.</javadoc>
             <params/>
             <throws/>
-            <body/>
+            <body>
+                <if condition="Greenfoot.mouseMoved(getWorld())" condition-java="Greenfoot.mouseMoved(getWorld())" enable="true">
+                    <ifStatements>
+                        <call expression="setImage(&quot;TutorialButton.png&quot;)" expression-java="setImage(&quot;TutorialButton.png&quot;)" enable="true"/>
+                    </ifStatements>
+                </if>
+                <if condition="Greenfoot.mouseMoved(this)" condition-java="Greenfoot.mouseMoved(this)" enable="true">
+                    <ifStatements>
+                        <call expression="setImage(&quot;newTutorial.png&quot;)" expression-java="setImage(&quot;newTutorial.png&quot;)" enable="true"/>
+                    </ifStatements>
+                </if>
+                <if condition="Greenfoot.mouseClicked(this)" condition-java="Greenfoot.mouseClicked(this)" enable="true">
+                    <ifStatements>
+                        <variable type="World" type-java="World" name="tutWorld" value="new Tutorial()" value-java=" new Tutorial()" enable="true"/>
+                        <call expression="Greenfoot.setWorld(tutWorld)" expression-java="Greenfoot.setWorld(tutWorld)" enable="true"/>
+                    </ifStatements>
+                </if>
+            </body>
         </method>
     </methods>
 </class>

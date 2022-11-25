@@ -7,23 +7,13 @@
     </imports>
     <implements/>
     <fields/>
-    <constructors>
-        <constructor access="public" enable="false">
-            <javadoc xml:space="preserve"/>
-            <params/>
-            <throws/>
-            <body>
-                <call expression="getImage().scale(250,180)" expression-java="getImage().scale(250, 180)" enable="false"/>
-            </body>
-        </constructor>
-    </constructors>
+    <constructors/>
     <methods>
         <method access="public" type="void" type-java="void" name="act" enable="true">
             <javadoc xml:space="preserve">Act - do whatever the World_PlayButton wants to do. This method is called whenever the 'Act' or 'Run' button gets pressed in the environment.</javadoc>
             <params/>
             <throws/>
             <body>
-                <variable type="GreenfootImage" type-java="GreenfootImage" name="newPlay" enable="false"/>
                 <if condition="Greenfoot.mouseMoved(getWorld())" condition-java="Greenfoot.mouseMoved(getWorld())" enable="true">
                     <ifStatements>
                         <call expression="setImage(&quot;PlayButton.png&quot;)" expression-java="setImage(&quot;PlayButton.png&quot;)" enable="true"/>
@@ -32,8 +22,6 @@
                 <if condition="Greenfoot.mouseMoved(this)" condition-java="Greenfoot.mouseMoved(this)" enable="true">
                     <ifStatements>
                         <call expression="setImage(&quot;newPlay.png&quot;)" expression-java="setImage(&quot;newPlay.png&quot;)" enable="true"/>
-                        <assign dest="newPlay" dest-java="newPlay" src="new GreenfootImage(&quot;newPlay.png&quot;)" src-java=" new GreenfootImage(&quot;newPlay.png&quot;)" enable="false"/>
-                        <call expression="setImage(newPlay)" expression-java="setImage(newPlay)" enable="false"/>
                     </ifStatements>
                 </if>
                 <if condition="Greenfoot.mouseClicked(this)" condition-java="Greenfoot.mouseClicked(this)" enable="true">
