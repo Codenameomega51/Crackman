@@ -16,6 +16,8 @@ public class CrackMan extends Actor
     private int score = 0;
     public GifImage Crackman =  new  GifImage("CrackmanClosed.gif");
     public GifImage CrackmanLeft =  new  GifImage("CrackmanClosedLeft.gif");
+    public GifImage Cracked = new GifImage("crackedGif.gif");
+    public GifImage CrackedUp = new GifImage("crackedGifUp.gif");
 
     /**
      * 
@@ -178,9 +180,9 @@ public class CrackMan extends Actor
             if (timer >= 1) {
                 move(spedUp);
                 if (direction == 3){
-                    setImage("crackedUp.png");
+                    setImage(CrackedUp.getCurrentImage());
                 } else {
-                    setImage("cracked.png");
+                    setImage(Cracked.getCurrentImage());
                 }
             }
         }
