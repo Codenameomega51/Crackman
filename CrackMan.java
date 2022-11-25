@@ -104,7 +104,10 @@ public class CrackMan extends Actor
                 direction = 0;
             }
             else if (direction == 2) {
-                setLocation(getX(), getY() + 3);
+                setLocation(getX(), getY() + 2);
+                direction = 0;
+            } else if ( direction == 1) {
+                setLocation(getX() - 2, getY() );
                 direction = 0;
             }
             else {
