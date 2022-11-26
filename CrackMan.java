@@ -18,7 +18,6 @@ public class CrackMan extends Actor
     public GifImage CrackmanLeft =  new  GifImage("CrackmanClosedLeft.gif");
     public GifImage Cracked = new GifImage("crackedGif.gif");
     public GifImage CrackedUp = new GifImage("crackedGifUp.gif");
-
     /**
      * 
      */
@@ -39,7 +38,7 @@ public class CrackMan extends Actor
         if (eatPowerup()) {
             poweredUp();
         }
-
+        levelc();
     }
 
     /**
@@ -250,5 +249,12 @@ public class CrackMan extends Actor
             }
         }
         return ate;
+    }
+
+    public void levelc(){
+        if (getWorld().getObjects(Tacos.class).size() == 0) {
+            World comp = new level_Complete();
+            Greenfoot.setWorld(comp);
+        }
     }
 }

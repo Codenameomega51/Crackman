@@ -8,7 +8,7 @@ import greenfoot.*;
 public class Ghost1 extends Ghosts
 {
     public GifImage Ghost1 =  new  GifImage("Ghost1.gif");
-
+    int speed = 3;
     /**
      * 
      */
@@ -32,6 +32,7 @@ public class Ghost1 extends Ghosts
      * 
      */
     public void mouvement()
+
     { int rand = Greenfoot.getRandomNumber(360);
         move(3);
         if (rand == 90){
@@ -48,8 +49,15 @@ public class Ghost1 extends Ghosts
         }
         
 
-    }
 
+    {
+        move(speed);
+        if (getWorld() instanceof level_Complete){
+            speed += 1;
+        }
+
+    }
+}
     /**
      * 
      */
