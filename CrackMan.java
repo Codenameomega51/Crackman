@@ -82,7 +82,6 @@ public class CrackMan extends Actor
             setRotation(90);
         }
         setLocation(x, y);
-
         if (isTouching(Wall_Right.class)) {
             setLocation(getX() - 2, getY() - 2);
             direction = 0;
@@ -104,37 +103,73 @@ public class CrackMan extends Actor
 
     public void wall(){
         Actor wall_V;
+        Actor wall_V2;
         Actor wall_H;
+        Actor wall_H2;
         wall_V = getOneIntersectingObject(Wall.class);
+        wall_V2 = getOneIntersectingObject(Wall2.class);
         wall_H = getOneIntersectingObject(WallHorizontal.class);
-        if (wall_V != null) {
-            if (direction == 3) {
-                setLocation(getX() + 2, getY());
-                direction = 0;
-            }
-            else if (direction == 2) {
-                setLocation(getX(), getY() + 2);
-                direction = 0;
-            } else if ( direction == 1) {
+        wall_H2 = getOneIntersectingObject(WallHorizontal2.class);
+
+        if (wall_V != null ) { 
+            if ( direction == 1) {
                 setLocation(getX() - 2, getY() );
                 direction = 0;
-            }
-            else {
-                setLocation(getX() - 2, getY() - 2);
+            }else if (direction == 2) {
+                setLocation(getX() + 2, getY() + 2 );
+                direction = 0;
+            } else if (direction == 3) {
+                setLocation(getX() + 2, getY() );
+                direction = 0;
+            }else {
+                setLocation(getX() , getY() - 2 );
                 direction = 0;
             }
         }
-        if (wall_H != null) {
+        if (wall_V2 != null ) { 
+            if ( direction == 1) {
+                setLocation(getX() - 2, getY() );
+                direction = 0;
+            }else if (direction == 2) {
+                setLocation(getX() + 2, getY() + 2 );
+                direction = 0;
+            } else if (direction == 3) {
+                setLocation(getX() + 2, getY() );
+                direction = 0;
+            }else {
+                setLocation(getX() , getY() - 2 );
+                direction = 0;
+            }
+        }
+        if (wall_H != null ) {
             if (direction == 1) {
-                setLocation(getX() - 2, getY());
+                setLocation(getX() - 2, getY() + 2);
                 direction = 0;
             }
             else if (direction == 2) {
-                setLocation(getX(), getY() + 2);
+                setLocation(getX() , getY() + 2 );
                 direction = 0;
             }
             else if (direction == 3) {
-                setLocation(getX() + 2, getY());
+                setLocation(getX() + 2, getY() );
+                direction = 0;
+            }
+            else {
+                setLocation(getX(), getY() - 2);
+                direction = 0;
+            }
+        }
+         if (wall_H2 != null ) {
+            if (direction == 1) {
+                setLocation(getX() - 2, getY() + 2);
+                direction = 0;
+            }
+            else if (direction == 2) {
+                setLocation(getX() , getY() + 2 );
+                direction = 0;
+            }
+            else if (direction == 3) {
+                setLocation(getX() + 2, getY() + 2);
                 direction = 0;
             }
             else {
