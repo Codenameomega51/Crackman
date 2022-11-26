@@ -1,10 +1,20 @@
 live system (to be fixed)
-LOSS SCREEN / RETRY
-highscore system (to be finished up when creating a loss screen)
+LOSS SCREEN / RETRY {
+need to make a dialogue
+retry button
+visual representation of pacman dead
+saying the highscore
+}
+{
 animating pacman
 animating cracked pacman
 animating ghost
 animating scared ghosts
+} (to be confirmed)
+animating dying pacman (white flashing)
+animate dying ghosts
+making the maze
+making interval screen between each level
 coding the ghosts
 fixing the walls
 tutorial screen

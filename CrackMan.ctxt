@@ -24,4 +24,6 @@ comment7.text=\r\n\ \r\n
 comment8.params=
 comment8.target=boolean\ defeat()
 comment8.text=\r\n\ \r\n
-numComments=9
+comment9.params=
+comment9.target=void\ levelc()
+numComments=10
