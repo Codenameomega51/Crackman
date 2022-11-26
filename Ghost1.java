@@ -32,13 +32,32 @@ public class Ghost1 extends Ghosts
      * 
      */
     public void mouvement()
+
+    { int rand = Greenfoot.getRandomNumber(360);
+        move(3);
+        if (rand == 90){
+        turn(90);
+        }
+        if (rand == 180){
+        turn(180);
+        }
+        if (rand == 270){
+        turn(270);
+        }
+        if (rand == 359){
+        turn(360);
+        }
+        
+
+
     {
         move(speed);
         if (getWorld() instanceof level_Complete){
             speed += 1;
         }
-    }
 
+    }
+}
     /**
      * 
      */
@@ -61,8 +80,18 @@ public class Ghost1 extends Ghosts
             turn(90);
         }
         if (isTouching(Wall.class)) {
-            setLocation(getX() - 10, getY() + 2);
+            setLocation(getX() - 2, getY() );
         }
+        if (isTouching(Wall2.class)) {
+            setLocation(getX() - 3, getY() );
+        }
+        if (isTouching(WallHorizontal.class)) {
+            setLocation(getX() - 10, getY() - 10);
+        }
+        if (isTouching(WallHorizontal2.class)) {
+            setLocation(getX() - 10, getY() - 10);
+        }
+        
     }
 
     public boolean win(){
