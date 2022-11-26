@@ -19,7 +19,6 @@ coding the ghosts
 fixing the walls
 tutorial screen
 difficulty selection (low priority)
-increase difficulty after level completed
 sound effects
 music
 backgrounds (maybe)
