@@ -1,7 +1,7 @@
-// WARNING: This file is auto-generated and any changes to it will be overwritten
 import lang.stride.*;
 import java.util.*;
 import greenfoot.*;
+import greenfoot.GreenfootSound;
 
 /**
  * 
@@ -19,13 +19,13 @@ public class Logo extends Actor
      */
     public void act()
     {
-        setter();
+        fade();
     }
 
     /**
      * 
      */
-    public void setter()
+    public void fade()
     {
         timerWait = timerWait + 1;
         timer = timer + 2;
@@ -37,17 +37,10 @@ public class Logo extends Actor
             getImage().setTransparency(244 - timer2);
         }
         if (timer2 == 244) {
-            Greenfoot.setWorld( new SplashScreen2());
+            Greenfoot.setWorld( new  SplashScreen2());
         }
         if (Greenfoot.mouseClicked(this) || Greenfoot.isKeyDown("space")) {
-            Greenfoot.setWorld( new MainMenu());
+            Greenfoot.setWorld( new  MainMenu());
         }
-    }
-
-    /**
-     * 
-     */
-    public void fade()
-    {
     }
 }

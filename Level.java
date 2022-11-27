@@ -10,12 +10,14 @@ public class Level extends World
     public static int score = 0;
     public static int lives = 3;
     public static int highScore;
+    GreenfootSound level = new GreenfootSound("level.ogg");
     /**
      * Constructor for objects of class MainMenu.
      */
     public Level()
     {
         super(900, 800, 1);
+        MainMenu.main.stop();
         prepare();
     }
 
@@ -246,6 +248,7 @@ public class Level extends World
     {
         scoreCount(score);
         livesCount(lives);
+        level.playLoop();
     }
 
     /**

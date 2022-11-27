@@ -1,4 +1,3 @@
-// WARNING: This file is auto-generated and any changes to it will be overwritten
 import lang.stride.*;
 import java.util.*;
 import greenfoot.*;
@@ -9,6 +8,7 @@ import greenfoot.*;
 public class SplashScreen extends World
 {
     private int timer;
+    static GreenfootSound sound = new GreenfootSound("splash1.mp3");
 
     /**
      * Constructor for objects of class SplashScreen.
@@ -24,7 +24,15 @@ public class SplashScreen extends World
      */
     private void prepare()
     {
-        Logo logo =  new Logo();
+        Logo logo =  new  Logo();
         addObject(logo, getWidth() / 2, getHeight() / 2);
+    }
+
+    /**
+     * 
+     */
+    public void act()
+    {
+        sound.play();
     }
 }

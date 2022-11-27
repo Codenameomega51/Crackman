@@ -1,4 +1,3 @@
-// WARNING: This file is auto-generated and any changes to it will be overwritten
 import lang.stride.*;
 import java.util.*;
 import greenfoot.*;
@@ -8,7 +7,7 @@ import greenfoot.*;
  */
 public class SplashScreen2 extends World
 {
-
+    static GreenfootSound sound2 = new GreenfootSound ("splash2.mp3");
     /**
      * Constructor for objects of class SplashScreen2.
      */
@@ -23,8 +22,13 @@ public class SplashScreen2 extends World
      */
     private void prepare()
     {
-        LOGO_Group lOGO_Group =  new LOGO_Group();
+        LOGO_Group lOGO_Group =  new  LOGO_Group();
         lOGO_Group.getImage().setTransparency(0);
         addObject(lOGO_Group, getWidth() / 2, getHeight() / 2);
+        SplashScreen.sound.stop();
+    }
+
+    public void act(){
+        sound2.play();
     }
 }
