@@ -279,7 +279,10 @@ public class Level extends World
 
         crackMan.setLocation(585,279);
 
+        Powerup powerup = new Powerup();
+        addObject(powerup,211,624);
     }
+
     /**
      * 
      */

@@ -93,6 +93,7 @@ public class CrackMan extends Actor
         Actor taco = getOneIntersectingObject(Tacos.class);
         if (taco != null) {
             getWorld().removeObject(taco);
+            Greenfoot.playSound("eat.mp3");
             Level.score = Level.score + 100;
         }
     }
@@ -105,6 +106,7 @@ public class CrackMan extends Actor
         Actor line = getOneIntersectingObject(Powerup.class);
         if (line != null) {
             getWorld().removeObject(line);
+            Greenfoot.playSound("power.mp3");
             timer = 300;
             power = true;
         }
