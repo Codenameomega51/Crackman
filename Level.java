@@ -240,10 +240,45 @@ public class Level extends World
         addObject(ghost42,532,196);
         Ghost5 ghost52 = new Ghost5();
         addObject(ghost52,483,150);
+
         WallHorizontal wallHorizontal7 = new WallHorizontal();
-        addObject(wallHorizontal7,448,315);
+        addObject(wallHorizontal7,451,319);
+        crackMan.setLocation(357,285);
+        Wall wall5 = new Wall();
+        addObject(wall5,451,448);
         Wall2 wall25 = new Wall2();
-        addObject(wall25,457,393);
+        addObject(wall25,787,109);
+        crackMan.setLocation(821,80);
+
+        WallHorizontal2 wallHorizontal23 = new WallHorizontal2();
+        addObject(wallHorizontal23,727,104);
+        crackMan.setLocation(635,98);
+
+        tacos2.setLocation(709,243);
+        Wall wall6 = new Wall();
+        addObject(wall6,719,243);
+        crackMan.setLocation(756,137);
+        Wall wall7 = new Wall();
+        addObject(wall7,231,178);
+        crackMan.setLocation(274,293);
+
+        Wall2 wall26 = new Wall2();
+        addObject(wall26,650,260);
+        crackMan.setLocation(570,271);
+        crackMan.setLocation(693,312);
+
+        crackMan.setLocation(543,301);
+        crackMan.setLocation(590,277);
+
+        wall7.setLocation(228,288);
+        WallHorizontal2 wallHorizontal24 = new WallHorizontal2();
+        addObject(wallHorizontal24,169,246);
+        Wall2 wall27 = new Wall2();
+        addObject(wall27,133,109);
+
+        crackMan.setLocation(585,279);
+
+    
     }
 
     /**

@@ -82,19 +82,7 @@ public class CrackMan extends Actor
         }
         if(getWall () == false){
             move(3);
-        } else {
-            int rand = Greenfoot.getRandomNumber(4);
-            move(-3);
-            if (rand == 0){
-                turn(90);
-            }
-            else if (rand == 1){
-                turn(-90);
-            }
-            else {
-                turn(180);
-            }
-        }
+        } 
     }
 
   
