@@ -85,8 +85,6 @@ public class CrackMan extends Actor
         } 
     }
 
-  
-
     /**
      * 
      */
@@ -164,11 +162,18 @@ public class CrackMan extends Actor
         || ghost5 != null) {
             //Saving score problem (possibly fixable by retry button upon loss)
             //infinite loss porblem
-            ate = true;
-            Level.lives = Level.lives - 1;
-            if (Level.lives == 0) {
-                World lost = new Lost();
-                Greenfoot.setWorld(lost);
+            if (eatPowerup() == false){
+                ate = true;
+                Level.lives = Level.lives - 1;
+                World temp = new temploss();
+                Greenfoot.setWorld(temp);
+                if (Level.lives == 0) {
+                    World lost = new Lost();
+                    Greenfoot.setWorld(lost);
+                }
+            } else {
+                // kill ghosts reset them to their area and then make the dying animation
+                // then it starts moving
             }
         }
         return ate;
@@ -180,7 +185,8 @@ public class CrackMan extends Actor
             Greenfoot.setWorld(comp);
         }
     }
-  private boolean getWall(){
+
+    private boolean getWall(){
         int distance = 50/2;
         int xOffset = (int) Math.ceil(distance * Math.cos(Math.toRadians(getRotation())));
         int yOffset = (int) Math.ceil(distance * Math.sin(Math.toRadians(getRotation())));

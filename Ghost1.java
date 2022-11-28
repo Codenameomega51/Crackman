@@ -8,7 +8,7 @@ import greenfoot.*;
 public class Ghost1 extends Ghosts
 {
     public GifImage Ghost1 =  new  GifImage("Ghost1.gif");
-    int speed = 3;
+    int speed = Level.speed;
     /**
      * 
      */
