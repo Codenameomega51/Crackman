@@ -35,7 +35,7 @@ public class CrackMan extends Actor
             moving();
         }
         eatTacos();
-        if (eatPowerup()) {
+        if (eatPowerup() == true) {
             poweredUp();
         }
         levelc();
@@ -80,103 +80,24 @@ public class CrackMan extends Actor
             setImage(Crackman.getCurrentImage());
             setRotation(90);
         }
-        setLocation(x, y);
-        if (isTouching(Wall_Right.class)) {
-            setLocation(getX() - 2, getY() - 2);
-            direction = 0;
-        }
-        if (isTouching(Wall_Up.class)) {
-            setLocation(getX() - 2, getY() + 2);
-            direction = 0;
-        }
-        if (isTouching(Wall_Down.class)) {
-            setLocation(getX() + 2, getY() - 2);
-            direction = 0;
-        }
-        if (isTouching(Wall_Left.class)) {
-            setLocation(getX() + 2, getY() + 2);
-            direction = 0;
-        }
-        wall();
-    }
-
-    public void wall(){
-        Actor wall_V;
-        Actor wall_V2;
-        Actor wall_H;
-        Actor wall_H2;
-        wall_V = getOneIntersectingObject(Wall.class);
-        wall_V2 = getOneIntersectingObject(Wall2.class);
-        wall_H = getOneIntersectingObject(WallHorizontal.class);
-        wall_H2 = getOneIntersectingObject(WallHorizontal2.class);
-
-        if (wall_V != null ) { 
-            if ( direction == 1) {
-                setLocation(getX() - 2, getY() );
-                direction = 0;
-            }else if (direction == 2) {
-                setLocation(getX() + 2, getY() + 2 );
-                direction = 0;
-            } else if (direction == 3) {
-                setLocation(getX() + 2, getY() );
-                direction = 0;
-            }else {
-                setLocation(getX() , getY() - 2 );
-                direction = 0;
+        if(getWall () == false){
+            move(3);
+        } else {
+            int rand = Greenfoot.getRandomNumber(4);
+            move(-3);
+            if (rand == 0){
+                turn(90);
             }
-        }
-        if (wall_V2 != null ) { 
-            if ( direction == 1) {
-                setLocation(getX() - 2, getY() );
-                direction = 0;
-            }else if (direction == 2) {
-                setLocation(getX() + 2, getY() + 2 );
-                direction = 0;
-            } else if (direction == 3) {
-                setLocation(getX() + 2, getY() );
-                direction = 0;
-            }else {
-                setLocation(getX() , getY() - 2 );
-                direction = 0;
-            }
-        }
-        if (wall_H != null ) {
-            if (direction == 1) {
-                setLocation(getX() - 2, getY() + 2);
-                direction = 0;
-            }
-            else if (direction == 2) {
-                setLocation(getX() , getY() + 2 );
-                direction = 0;
-            }
-            else if (direction == 3) {
-                setLocation(getX() + 2, getY() );
-                direction = 0;
+            else if (rand == 1){
+                turn(-90);
             }
             else {
-                setLocation(getX(), getY() - 2);
-                direction = 0;
-            }
-        }
-         if (wall_H2 != null ) {
-            if (direction == 1) {
-                setLocation(getX() - 2, getY() + 2);
-                direction = 0;
-            }
-            else if (direction == 2) {
-                setLocation(getX() , getY() + 2 );
-                direction = 0;
-            }
-            else if (direction == 3) {
-                setLocation(getX() + 2, getY() + 2);
-                direction = 0;
-            }
-            else {
-                setLocation(getX(), getY() - 2);
-                direction = 0;
+                turn(180);
             }
         }
     }
+
+  
 
     /**
      * 
@@ -223,7 +144,21 @@ public class CrackMan extends Actor
         else {
             move(speed);
         }
-        wall();
+        if(getWall () == false){
+            move(speed);
+        } else {
+            int rand = Greenfoot.getRandomNumber(4);
+            move(-3);
+            if (rand == 0){
+                turn(90);
+            }
+            else if (rand == 1){
+                turn(-90);
+            }
+            else {
+                turn(180);
+            }
+        }
     }
 
     /**
@@ -257,4 +192,19 @@ public class CrackMan extends Actor
             Greenfoot.setWorld(comp);
         }
     }
+  private boolean getWall(){
+        int distance = 50/2;
+        int xOffset = (int) Math.ceil(distance * Math.cos(Math.toRadians(getRotation())));
+        int yOffset = (int) Math.ceil(distance * Math.sin(Math.toRadians(getRotation())));
+        Actor wall = getOneObjectAtOffset(xOffset, yOffset, Wall2.class );
+        Actor wallV2 = getOneObjectAtOffset(xOffset, yOffset, Wall.class );
+        Actor wallH = getOneObjectAtOffset(xOffset, yOffset, WallHorizontal.class );
+        Actor wallH2 = getOneObjectAtOffset(xOffset, yOffset, WallHorizontal2.class );
+        Actor wallD = getOneObjectAtOffset(xOffset, yOffset, Wall_Down.class );
+        Actor wallL = getOneObjectAtOffset(xOffset, yOffset, Wall_Left.class );
+        Actor wallR = getOneObjectAtOffset(xOffset, yOffset, Wall_Right.class );
+        Actor wallU = getOneObjectAtOffset(xOffset, yOffset, Wall_Up.class );
+        return (wall!=null) || (wallV2!=null) ||(wallH!=null) || (wallH2!=null) || (wallD!=null) || (wallR!=null) || (wallL!=null) || (wallU!=null); 
+    }
 }
+

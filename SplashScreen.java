@@ -8,7 +8,7 @@ import greenfoot.*;
 public class SplashScreen extends World
 {
     private int timer;
-    static GreenfootSound sound = new GreenfootSound("splash1.mp3");
+    public static GreenfootSound sound = new GreenfootSound("splash1.mp3");
 
     /**
      * Constructor for objects of class SplashScreen.

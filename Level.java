@@ -10,14 +10,15 @@ public class Level extends World
     public static int score = 0;
     public static int lives = 3;
     public static int highScore;
-    GreenfootSound level = new GreenfootSound("level.ogg");
+    //public GreenfootSound level = new GreenfootSound("level.ogg");
+    // level.ogg not supported
     /**
      * Constructor for objects of class MainMenu.
      */
     public Level()
     {
         super(900, 800, 1);
-        MainMenu.main.stop();
+        //MainMenu.main.stop();
         prepare();
     }
 
@@ -239,6 +240,10 @@ public class Level extends World
         addObject(ghost42,532,196);
         Ghost5 ghost52 = new Ghost5();
         addObject(ghost52,483,150);
+        WallHorizontal wallHorizontal7 = new WallHorizontal();
+        addObject(wallHorizontal7,448,315);
+        Wall2 wall25 = new Wall2();
+        addObject(wall25,457,393);
     }
 
     /**
@@ -248,7 +253,8 @@ public class Level extends World
     {
         scoreCount(score);
         livesCount(lives);
-        level.playLoop();
+        //level.playLoop();
+        
     }
 
     /**
