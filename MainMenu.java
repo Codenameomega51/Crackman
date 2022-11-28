@@ -51,7 +51,7 @@ public class MainMenu extends World
      */
     public void act()
     {
-        //main.playLoop();
+        main.playLoop();
         //Greenfoot.playSound("main.mp3");
     }
 }
