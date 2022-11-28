@@ -1,7 +1,9 @@
 #BlueJ class context
-comment0.target=GameEnded
+comment0.target=Won
 comment0.text=\r\n\ \r\n
 comment1.params=
-comment1.target=GameEnded()
+comment1.target=Won()
 comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ GameEnded.\r\n
-numComments=2
+comment2.params=
+comment2.target=void\ act()
+numComments=3

@@ -10,15 +10,17 @@ public class Level extends World
     public static int score = 0;
     public static int lives = 3;
     public static int highScore;
-    public GreenfootSound level = new GreenfootSound("level.mp3");
-   
+    public static GreenfootSound level = new GreenfootSound("level.mp3");
+    public static int speed = 3;
+
     /**
      * Constructor for objects of class MainMenu.
      */
     public Level()
     {
         super(900, 800, 1);
-       MainMenu.main.stop();
+        //MainMenu.start.stop();
+        temploss.temp.stop();
         prepare();
     }
 
@@ -27,7 +29,6 @@ public class Level extends World
      */
     private void prepare()
     {
-        lives = 3;
         Ghost1 ghost1 =  new  Ghost1();
         addObject(ghost1, 503, 558);
         CrackMan crackMan =  new  CrackMan();
@@ -278,9 +279,7 @@ public class Level extends World
 
         crackMan.setLocation(585,279);
 
-    
     }
-
     /**
      * 
      */
@@ -289,7 +288,7 @@ public class Level extends World
         scoreCount(score);
         livesCount(lives);
         level.playLoop();
-        
+
     }
 
     /**

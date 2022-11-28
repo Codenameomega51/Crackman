@@ -14,6 +14,7 @@ public class SplashScreen2 extends World
     public SplashScreen2()
     {
         super(900, 800, 1);
+        SplashScreen.sound.stop();
         prepare();
     }
 
@@ -25,7 +26,6 @@ public class SplashScreen2 extends World
         LOGO_Group lOGO_Group =  new  LOGO_Group();
         lOGO_Group.getImage().setTransparency(0);
         addObject(lOGO_Group, getWidth() / 2, getHeight() / 2);
-        SplashScreen.sound.stop();
     }
 
     public void act(){

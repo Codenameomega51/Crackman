@@ -41,6 +41,7 @@ public class Logo extends Actor
         }
         if (Greenfoot.mouseClicked(this) || Greenfoot.isKeyDown("space")) {
             Greenfoot.setWorld( new  MainMenu());
+            SplashScreen.sound.stop();
         }
     }
 }
