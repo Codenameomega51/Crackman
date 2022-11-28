@@ -8,7 +8,7 @@ import greenfoot.GreenfootSound;
  */
 public class MainMenu extends World
 {
-    //static GreenfootSound main = new GreenfootSound("main.ogg");
+    static GreenfootSound main = new GreenfootSound("main.mp3");
     /**
      * Constructor for objects of class MainMenu.
      */
@@ -52,6 +52,6 @@ public class MainMenu extends World
     public void act()
     {
         //main.playLoop();
-       // Greenfoot.playSound("main.ogg");
+        //Greenfoot.playSound("main.mp3");
     }
 }
