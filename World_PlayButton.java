@@ -1,3 +1,4 @@
+// WARNING: This file is auto-generated and any changes to it will be overwritten
 import lang.stride.*;
 import java.util.*;
 import greenfoot.*;
@@ -20,8 +21,7 @@ public class World_PlayButton extends Actor
             setImage("newPlay.png");
         }
         if (Greenfoot.mouseClicked(this)) {
-            MainMenu.start.stop();
-            World levelWorld =  new  Level();
+            World levelWorld =  new Level();
             Greenfoot.setWorld(levelWorld);
         }
     }

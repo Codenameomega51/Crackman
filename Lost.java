@@ -8,6 +8,7 @@ import greenfoot.*;
 public class Lost extends World
 {
     static GreenfootSound lost = new GreenfootSound("temp.mp3");
+    public GifImage bg =  new  GifImage("LOSSheart.gif");
     int timer = 0;
     /**
      * Constructor for objects of class Lost.
@@ -20,10 +21,12 @@ public class Lost extends World
 
     public void act() {
         Level.lives = 3;
+        setBackground(bg.getCurrentImage());
         if (timer == 0){
             lost.play();
             timer++;
         }
+        
     }
 
     /**

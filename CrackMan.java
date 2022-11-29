@@ -46,8 +46,7 @@ public class CrackMan extends Actor
      */
     public void moving()
     {
-        int x = getX();
-        int y = getY();
+
         if (Greenfoot.isKeyDown("d")) {
             direction = 1;
         }
@@ -60,6 +59,12 @@ public class CrackMan extends Actor
         if (Greenfoot.isKeyDown("s")) {
             direction = 4;
         }
+        direction();
+    }
+
+    public void direction() {
+        int x = getX();
+        int y = getY();
         if (direction == 1) {
             x = x + 2;
             setImage(Crackman.getCurrentImage());
@@ -83,6 +88,7 @@ public class CrackMan extends Actor
         if(getWall () == false){
             move(3);
         } 
+
     }
 
     /**
@@ -118,7 +124,7 @@ public class CrackMan extends Actor
      */
     public void poweredUp()
     {
-        if (power) {
+        if (power == true) {
             timer = timer - 1;
             if (timer >= 1) {
                 move(spedUp);
@@ -133,20 +139,21 @@ public class CrackMan extends Actor
             move(speed);
         }
         if(getWall () == false){
-            move(speed);
-        } else {
-            int rand = Greenfoot.getRandomNumber(4);
-            move(-3);
-            if (rand == 0){
-                turn(90);
-            }
-            else if (rand == 1){
-                turn(-90);
-            }
-            else {
-                turn(180);
-            }
-        }
+                    move(speed);
+                } else {
+                    int rand = Greenfoot.getRandomNumber(4);
+                    move(-speed);
+                    if (rand == 0){
+                        turn(90);
+                    }
+                    else if (rand == 1){
+                        turn(-90);
+                    }
+                    else {
+                        turn(180);
+                    }
+                }
+
     }
 
     /**
