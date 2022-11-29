@@ -125,34 +125,23 @@ public class CrackMan extends Actor
     public void poweredUp()
     {
         if (power == true) {
+
             timer = timer - 1;
-            if (timer >= 1) {
-                move(spedUp);
-                if (direction == 3){
-                    setImage(CrackedUp.getCurrentImage());
-                } else {
-                    setImage(Cracked.getCurrentImage());
-                }
+            setImage(CrackedUp.getCurrentImage()); 
+            if( direction != 3){
+                setImage(Cracked.getCurrentImage());
             }
+            if (timer >= 1) {
+                if(getWall () == false){
+                    move(spedUp);
+                }
+                } else if (timer == 0) {
+                power = false;
+                }
         }
         else {
-            move(speed);
+           direction();
         }
-        if(getWall () == false){
-                    move(speed);
-                } else {
-                    int rand = Greenfoot.getRandomNumber(4);
-                    move(-speed);
-                    if (rand == 0){
-                        turn(90);
-                    }
-                    else if (rand == 1){
-                        turn(-90);
-                    }
-                    else {
-                        turn(180);
-                    }
-                }
 
     }
 
@@ -183,6 +172,8 @@ public class CrackMan extends Actor
             } else {
                 // kill ghosts reset them to their area and then make the dying animation
                 // then it starts moving
+                World temp = new temploss();
+                Greenfoot.setWorld(temp);
             }
         }
         return ate;
@@ -207,7 +198,7 @@ public class CrackMan extends Actor
         Actor wallL = getOneObjectAtOffset(xOffset, yOffset, Wall_Left.class );
         Actor wallR = getOneObjectAtOffset(xOffset, yOffset, Wall_Right.class );
         Actor wallU = getOneObjectAtOffset(xOffset, yOffset, Wall_Up.class );
-        return (wall!=null) || (wallV2!=null) ||(wallH!=null) || (wallH2!=null) || (wallD!=null) || (wallR!=null) || (wallL!=null) || (wallU!=null); 
+        return wall!=null || wallV2!=null ||wallH!=null || wallH2!=null || wallD!=null || wallR!=null || wallL!=null || wallU!=null; 
     }
 }
 
