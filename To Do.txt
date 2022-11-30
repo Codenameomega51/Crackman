@@ -12,7 +12,7 @@ saying the highscore
 animating scared ghosts
 } (to be confirmed)
 animating dying pacman (white flashing)
-animate dying ghosts
+animate dying ghosts (made image for dead ghosts)
 making the maze
 making interval screen between each level
 coding the ghosts

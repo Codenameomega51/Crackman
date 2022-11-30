@@ -26,7 +26,7 @@ public class MainMenu extends World
     {
         LOGO_GameName lOGO_GameName =  new  LOGO_GameName();
         addObject(lOGO_GameName, 458, 183);
-        World_CrackMan world_CrackMan =  new  World_CrackMan();
+        CrackMan_main world_CrackMan =  new  CrackMan_main();
         addObject(world_CrackMan, 41, 290);
         World_PlayButton world_PlayButton =  new  World_PlayButton();
         addObject(world_PlayButton, 450, 415);
@@ -52,5 +52,10 @@ public class MainMenu extends World
     public void act()
     {
         start.play();
+        if (Greenfoot.mouseClicked(World_PlayButton.class)) {
+            start.stop();
+            
+           
+        }
     }
 }

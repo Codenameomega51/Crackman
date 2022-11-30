@@ -700,7 +700,7 @@ public class Level extends World
     {
         scoreCount(score);
         livesCount(lives);
-       // level.playLoop();
+        level.playLoop();
 
     }
 

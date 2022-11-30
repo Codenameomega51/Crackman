@@ -29,13 +29,18 @@ public class temploss extends World
         }
 
     }
+    
     /**
      * Prepare the world for the start of the program.
      * That is: create the initial objects and add them to the world.
      */
     private void prepare()
     {
-        retry retry = new retry();
-        addObject(retry,315,648);
+        World_RetryButton retry = new World_RetryButton();
+        addObject(retry,getWidth()/2,648);
+  
+        Crackman_Dead crackman_Dead = new Crackman_Dead();
+        addObject(crackman_Dead,getWidth()/2,541);
+      
     }
 }

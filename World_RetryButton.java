@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class retry extends Actor
+public class World_RetryButton extends Actor
 {
     /**
      * Act - do whatever the retry wants to do. This method is called whenever
@@ -14,8 +14,16 @@ public class retry extends Actor
      */
     public void act()
     {
+        
+        
+        if (Greenfoot.mouseMoved(getWorld())) {
+            setImage("RetryButton.png");
+        }
+        if (Greenfoot.mouseMoved(this)) {
+            setImage("RetryButton2.png");
+        }
         if (Greenfoot.mouseClicked(this) || Greenfoot.isKeyDown("space")) {
-            Greenfoot.setWorld( new  Level());
+            Greenfoot.setWorld(new Level());
         }
     }
 }

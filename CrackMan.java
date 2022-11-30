@@ -172,6 +172,7 @@ public class CrackMan extends Actor
             } else {
                 // kill ghosts reset them to their area and then make the dying animation
                 // then it starts moving
+                //i dont know how to do that 
                 World temp = new temploss();
                 Greenfoot.setWorld(temp);
             }

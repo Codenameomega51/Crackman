@@ -29,7 +29,7 @@ public class Ghost4 extends Ghosts
         if(getWall () == false){
             move(3);
         } else {
-            int rand = Greenfoot.getRandomNumber(4);
+            int rand = Greenfoot.getRandomNumber(3);
             move(-3);
             if (rand == 0){
                 turn(90);

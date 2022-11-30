@@ -28,7 +28,7 @@ public class World_TutorialButton extends Actor
             setImage("newTutorial.png");
         }
         if (Greenfoot.mouseClicked(this)) {
-            World tutWorld =  new Tutorial();
+            World tutWorld =  new  Tutorial();
             Greenfoot.setWorld(tutWorld);
         }
     }

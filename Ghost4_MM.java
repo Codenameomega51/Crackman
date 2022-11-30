@@ -1,4 +1,3 @@
-// WARNING: This file is auto-generated and any changes to it will be overwritten
 import lang.stride.*;
 import java.util.*;
 import greenfoot.*;
@@ -14,5 +13,11 @@ public class Ghost4_MM extends Actor
      */
     public void act()
     {
+          if (Greenfoot.mouseMoved(getWorld())){
+            setImage("CrackedGhost4_SCALED.png");
+        }
+        if (Greenfoot.mouseMoved(this)) {
+            setImage("Ghost4Gif.gif");
+        }
     }
 }
