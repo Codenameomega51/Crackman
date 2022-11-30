@@ -12,7 +12,7 @@ public class CrackMan extends Actor
     private boolean power = false;
     private int speed = 2;
     private int timer;
-    private int spedUp = speed + 2;
+    private int spedUp = speed + 1;
     private int score = 0;
     public GifImage Crackman =  new  GifImage("CrackmanClosed.gif");
     public GifImage CrackmanLeft =  new  GifImage("CrackmanClosedLeft.gif");
