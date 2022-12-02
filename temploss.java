@@ -38,9 +38,12 @@ public class temploss extends World
     {
         World_RetryButton retry = new World_RetryButton();
         addObject(retry,getWidth()/2,648);
-  
+
         Crackman_Dead crackman_Dead = new Crackman_Dead();
-        addObject(crackman_Dead,getWidth()/2,541);
+        addObject(crackman_Dead,100,700);
+
+        Loss_LoseLife loss_LoseLife = new Loss_LoseLife();
+        addObject(loss_LoseLife,getWidth()/2,320);
       
     }
 }

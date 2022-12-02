@@ -36,8 +36,29 @@ public class Lost extends World
     private void prepare()
     {
         World_RetryButton retry = new World_RetryButton();
-        addObject(retry,getWidth()/2,628);
-        LOSS_bg lOSS_bg = new LOSS_bg();
-        addObject(lOSS_bg,463,496);
+        addObject(retry,620,620);
+
+        Loss loss = new Loss();
+        addObject(loss,480,315);
+        Ghost1_MM ghost1_MM = new Ghost1_MM();
+        addObject(ghost1_MM,321,134);
+
+        Ghost2_MM ghost2_MM = new Ghost2_MM();
+        addObject(ghost2_MM,205,509);
+
+        Ghost3_MM ghost3_MM = new Ghost3_MM();
+        addObject(ghost3_MM,615,503);
+
+        Ghost4_MM ghost4_MM = new Ghost4_MM();
+        addObject(ghost4_MM,294,510);
+
+        Ghost5_MM ghost5_MM = new Ghost5_MM();
+        addObject(ghost5_MM,693,500);
+
+        Loss_PlayAgain loss_PlayAgain = new Loss_PlayAgain();
+        addObject(loss_PlayAgain,460,495);
+        World_PlayButton world_PlayButton = new World_PlayButton();
+        addObject(world_PlayButton,350,620);
+
     }
 }
