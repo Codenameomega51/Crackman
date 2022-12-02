@@ -8,7 +8,8 @@ import greenfoot.*;
 public class Lost extends World
 {
     static GreenfootSound lost = new GreenfootSound("temp.mp3");
-    
+    static GreenfootSound start;
+
     int timer = 0;
     /**
      * Constructor for objects of class Lost.
@@ -17,16 +18,18 @@ public class Lost extends World
     {
         super(900, 800, 1);
         prepare();
+
     }
 
     public void act() {
         Level.lives = 3;
-       
         if (timer == 0){
             lost.play();
             timer++;
         }
-        
+
+       
+
     }
 
     /**
@@ -35,7 +38,7 @@ public class Lost extends World
      */
     private void prepare()
     {
-        World_RetryButton retry = new World_RetryButton();
+        World_GameOverMMButton retry = new World_GameOverMMButton();
         addObject(retry,620,620);
 
         Loss loss = new Loss();
@@ -57,8 +60,8 @@ public class Lost extends World
 
         Loss_PlayAgain loss_PlayAgain = new Loss_PlayAgain();
         addObject(loss_PlayAgain,460,495);
-        World_PlayButton world_PlayButton = new World_PlayButton();
-        addObject(world_PlayButton,350,620);
+        World_GameOverPlayButton world_PlayButton = new World_GameOverPlayButton();
+        addObject(world_PlayButton,330,620);
 
     }
 }

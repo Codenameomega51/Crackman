@@ -14,6 +14,7 @@ public class CrackMan extends Actor
     private int timer;
     private int spedUp = speed + 1;
     private int score = 0;
+    private int powerup = 3;
     public GifImage Crackman =  new  GifImage("CrackmanClosed.gif");
     public GifImage CrackmanLeft =  new  GifImage("CrackmanClosedLeft.gif");
     public GifImage Cracked = new GifImage("crackedGif.gif");
@@ -114,7 +115,9 @@ public class CrackMan extends Actor
             getWorld().removeObject(line);
             Greenfoot.playSound("power.mp3");
             timer = 300;
+            powerup = powerup - 1;
             power = true;
+        
         }
         return power;
     }
@@ -130,6 +133,7 @@ public class CrackMan extends Actor
             setImage(CrackedUp.getCurrentImage()); 
             if( direction != 3){
                 setImage(Cracked.getCurrentImage());
+                defeat();
             }
             if (timer >= 1) {
                 if(getWall () == false){
@@ -170,9 +174,6 @@ public class CrackMan extends Actor
                     Greenfoot.setWorld(lost);
                 }
             } else {
-                // kill ghosts reset them to their area and then make the dying animation
-                // then it starts moving
-                //i dont know how to do that 
                 World temp = new temploss();
                 Greenfoot.setWorld(temp);
             }
@@ -181,8 +182,9 @@ public class CrackMan extends Actor
     }
 
     public void levelc(){
-        if (getWorld().getObjects(Tacos.class).size() == 0) {
-            World comp = new level_Complete();
+        if (getWorld().getObjects(Tacos.class).size() == 0 && 
+            getWorld().getObjects(Powerup.class).size() == 0) {
+            World comp = new CompleteLevel();
             Greenfoot.setWorld(comp);
         }
     }

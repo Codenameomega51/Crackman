@@ -5,7 +5,7 @@ import greenfoot.*;
 /**
  * 
  */
-public class Level extends World
+public class TutorialLevel extends World
 {
     public static int score = 0;
     public static int lives = 3;
@@ -16,7 +16,7 @@ public class Level extends World
     /**
      * Constructor for objects of class MainMenu.
      */
-    public Level()
+    public TutorialLevel()
     {
         super(900, 800, 1);
         temploss.temp.stop();
