@@ -24,6 +24,7 @@ public class World_GameOverPlayButton extends Actor
         }
         if (Greenfoot.mouseClicked(this)) {
             Lost.lost.stop();
+            Level.score = 0;
             World levelWorld =  new Level();
             Greenfoot.setWorld(levelWorld);
         }

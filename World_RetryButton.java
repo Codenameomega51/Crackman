@@ -23,6 +23,7 @@ public class World_RetryButton extends Actor
             setImage("RetryButton2.png");
         }
         if (Greenfoot.mouseClicked(this) || Greenfoot.isKeyDown("space")) {
+            Level.score = 0;
             Greenfoot.setWorld(new Level());
         }
     }

@@ -10,6 +10,7 @@ public class Level extends World
     public static int score = 0;
     public static int lives = 3;
     public static int highScore;
+    public static int highScoreCount;
     public static GreenfootSound level = new GreenfootSound("level.mp3");
     public static int speed = 3;
 
@@ -698,6 +699,7 @@ public class Level extends World
     public void act()
     {
         scoreCount(score);
+        highScoreCount(score);
         livesCount(lives);
         level.playLoop();
 
@@ -711,8 +713,17 @@ public class Level extends World
         showText("Score: " + score, 85, 17);
         if (highScore < score){
             highScore = score;
-        }
+        } else
+        highScoreCount = highScore;
         
+    }
+    
+    public void highScoreCount(int hscore) {
+    showText("High Score: " + highScoreCount, 700, 17);
+        // if (highScore < score){
+            // highScore = score;
+        // }
+    
     }
 
     /**

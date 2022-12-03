@@ -25,25 +25,26 @@ public class MainMenu extends World
     private void prepare()
     {
         LOGO_GameName lOGO_GameName =  new  LOGO_GameName();
-        addObject(lOGO_GameName, 458, 183);
+        addObject(lOGO_GameName, 458, 253);
         CrackMan_main world_CrackMan =  new  CrackMan_main();
-        addObject(world_CrackMan, 41, 290);
+        addObject(world_CrackMan, 173,172);
         World_PlayButton world_PlayButton =  new  World_PlayButton();
-        addObject(world_PlayButton, 450, 415);
-        world_CrackMan.setLocation(183, 118);
-        World_TutorialButton world_TutorialButton =  new  World_TutorialButton();
-        addObject(world_TutorialButton, 435, 516);
-        world_TutorialButton.setLocation(450, 498);
+        addObject(world_PlayButton, 450, 615);
+
         Ghost1_MM ghost1_MM =  new  Ghost1_MM();
-        addObject(ghost1_MM, 338, 111);
+        addObject(ghost1_MM, 338, 180);
         Ghost2_MM ghost2_MM =  new  Ghost2_MM();
-        addObject(ghost2_MM, 424, 267);
+        addObject(ghost2_MM, 425,340);
         Ghost3_MM ghost3_MM =  new  Ghost3_MM();
-        addObject(ghost3_MM, 779, 113);
+        addObject(ghost3_MM, 779, 175);
         Ghost4_MM ghost4_MM =  new  Ghost4_MM();
-        addObject(ghost4_MM, 624, 267);
+        addObject(ghost4_MM, 650,341);
         Ghost5_MM ghost5_MM =  new  Ghost5_MM();
-        addObject(ghost5_MM, 148, 276);
+        addObject(ghost5_MM, 148, 346);
+
+        World_CreditsButton world_TutorialButton = new World_CreditsButton();
+        addObject(world_TutorialButton,800,35);
+       
     }
 
     /**
@@ -55,7 +56,6 @@ public class MainMenu extends World
         if (Greenfoot.mouseClicked(World_PlayButton.class)) {
             start.stop();
             
-           
         }
     }
 }

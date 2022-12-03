@@ -10,6 +10,7 @@ public class temploss extends World
 {
     static GreenfootSound temp = new GreenfootSound("fail.mp3");
     int timer = 0;
+    int lives = Level.lives;
     /**
      * Constructor for objects of class temploss.
      * 
@@ -28,9 +29,14 @@ public class temploss extends World
             temp.play();
             timer++;
         }
-        
+        livesCount(lives);
       
 
+    }
+    
+    public void livesCount(int live)
+    {
+        showText("" + live, 500, 513);
     }
     
     
@@ -42,15 +48,17 @@ public class temploss extends World
     private void prepare()
     {
         World_RetryButton retry = new World_RetryButton();
-        addObject(retry,620/2,620);
+        addObject(retry,620/2,690);
 
         Crackman_Dead crackman_Dead = new Crackman_Dead();
-        addObject(crackman_Dead,100,700);
+        addObject(crackman_Dead,315,543);
 
         Loss_LoseLife loss_LoseLife = new Loss_LoseLife();
-        addObject(loss_LoseLife,getWidth()/2,320);
+        addObject(loss_LoseLife,430,320);
 
         World_GameOverMMButton world_MMButton = new World_GameOverMMButton();
-        addObject(world_MMButton,633,620);
+        addObject(world_MMButton,633,690);
+
+
     }
 }

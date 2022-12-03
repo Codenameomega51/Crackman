@@ -15,7 +15,7 @@ public class World_PlayButton extends Actor
     public void act()
 
     {
-
+      
         if (Greenfoot.mouseMoved(getWorld())) {
             setImage("PlayButton.png");
         }
@@ -24,6 +24,8 @@ public class World_PlayButton extends Actor
         }
         if (Greenfoot.mouseClicked(this)) {
             MainMenu.start.stop();
+            Level.lives = 3;
+            Level.score = 0;
             World levelWorld =  new Level();
             Greenfoot.setWorld(levelWorld);
         }
