@@ -720,9 +720,6 @@ public class Level extends World
     
     public void highScoreCount(int hscore) {
     showText("High Score: " + highScoreCount, 700, 17);
-        // if (highScore < score){
-            // highScore = score;
-        // }
     
     }
 

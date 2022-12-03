@@ -8,6 +8,8 @@ import greenfoot.*;
 public class Ghost2 extends Ghosts
 {
     public GifImage Ghost1 =  new  GifImage("Ghost2Gif.gif");
+int speed = Level.speed;
+
 
     /**
      * Act - do whatever the Ghost2 wants to do. This method is called whenever the 'Act' or 'Run' button gets pressed in the environment.
@@ -41,6 +43,7 @@ public class Ghost2 extends Ghosts
                 turn(180);
             }
         }
+       
     }
 
     public boolean win(){

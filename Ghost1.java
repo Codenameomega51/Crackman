@@ -52,7 +52,7 @@ public class Ghost1 extends Ghosts
         {
             move(speed);
             if (getWorld() instanceof CompleteLevel){
-                speed += 1;
+                speed += 4;
             }
 
         }

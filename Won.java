@@ -7,7 +7,7 @@ import greenfoot.*;
  */
 public class Won extends World
 {
-
+    int hscore = Level.highScoreCount;
     /**
      * Constructor for objects of class GameEnded.
      */
@@ -15,13 +15,23 @@ public class Won extends World
     {
         super(900, 800, 1);
         prepare();
+
+      
+
     }
+    
+   
+    
+    
 
     public void act(){
-    
+            scoreCount(hscore);
     }
-    
-    /**
+     public void scoreCount(int hscore)
+    {
+        showText("" + hscore , 500, 340);
+    }
+/**
      * Prepare the world for the start of the program.
      * That is: create the initial objects and add them to the world.
      */
