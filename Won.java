@@ -8,6 +8,7 @@ import greenfoot.*;
 public class Won extends World
 {
     int hscore = Level.highScoreCount;
+    int highscore;
     /**
      * Constructor for objects of class GameEnded.
      */
@@ -19,19 +20,22 @@ public class Won extends World
       
 
     }
-    
-   
-    
-    
 
     public void act(){
             scoreCount(hscore);
     }
      public void scoreCount(int hscore)
     {
+        
+        if (highscore == 12900) {
+            highscore = hscore + highscore;
+        showText("" + highscore , 500, 340);
+        
+        } else
         showText("" + hscore , 500, 340);
     }
-/**
+
+    /**
      * Prepare the world for the start of the program.
      * That is: create the initial objects and add them to the world.
      */
@@ -42,11 +46,12 @@ public class Won extends World
 
         World_GameOverMMButton world_GameOverMMButton = new World_GameOverMMButton();
         addObject(world_GameOverMMButton,623,557);
-        World_GameOverPlayButton world_GameOverPlayButton = new World_GameOverPlayButton();
-        addObject(world_GameOverPlayButton,315,557);
+
+        World_GameWinPlayButton world_GameOverPlayButton = new World_GameWinPlayButton();
+        addObject(world_GameOverPlayButton,300,557);
 
         Loss_PlayAgain loss_PlayAgain = new Loss_PlayAgain();
-        addObject(loss_PlayAgain,457,471);
+        addObject(loss_PlayAgain,450,471);
 
     }
 }

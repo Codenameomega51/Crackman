@@ -8,7 +8,7 @@ import greenfoot.*;
 public class Ghost4 extends Ghosts
 {
     public GifImage Ghost1 =  new  GifImage("Ghost4Gif.gif");
-
+    int speed = Level.speed;
     /**
      * Act - do whatever the Ghost2 wants to do. This method is called whenever the 'Act' or 'Run' button gets pressed in the environment.
      */
@@ -27,10 +27,10 @@ public class Ghost4 extends Ghosts
     {
 
         if(getWall () == false){
-            move(3);
+           move(speed);
         } else {
             int rand = Greenfoot.getRandomNumber(3);
-            move(-3);
+           move(speed);
             if (rand == 0){
                 turn(90);
             }

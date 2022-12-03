@@ -14,7 +14,7 @@ public class World_RetryButton extends Actor
      */
     public void act()
     {
-        
+        int speedRetry = Level.speed;
         
         if (Greenfoot.mouseMoved(getWorld())) {
             setImage("RetryButton.png");
@@ -22,7 +22,11 @@ public class World_RetryButton extends Actor
         if (Greenfoot.mouseMoved(this)) {
             setImage("RetryButton2.png");
         }
-        if (Greenfoot.mouseClicked(this) || Greenfoot.isKeyDown("space")) {
+        if (Greenfoot.mouseClicked(this) || Greenfoot.isKeyDown("space")) { 
+            if(Level.speed > 3){
+            Level.speed = speedRetry;
+        }
+            
             Level.score = 0;
             Greenfoot.setWorld(new Level());
         }

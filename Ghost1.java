@@ -32,11 +32,14 @@ public class Ghost1 extends Ghosts
      */
     public void mouvement()
 
-    { if(getWall () == false){
-            move(3);
+   
+    { 
+         
+        if(getWall () == false){
+            move(speed);
         } else {
             int rand = Greenfoot.getRandomNumber(4);
-            move(-3);
+            move(speed);
             if (rand == 0){
                 turn(90);
             }
@@ -49,13 +52,6 @@ public class Ghost1 extends Ghosts
         }
 
 
-        {
-            move(speed);
-            if (getWorld() instanceof CompleteLevel){
-                speed += 4;
-            }
-
-        }
     }
 
      private boolean getWall(){

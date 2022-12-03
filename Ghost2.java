@@ -29,10 +29,10 @@ int speed = Level.speed;
     {
 
         if(getWall () == false){
-            move(3);
+            move(speed);
         } else {
             int rand = Greenfoot.getRandomNumber(4);
-            move(-3);
+            move(speed);
             if (rand == 0){
                 turn(90);
             }

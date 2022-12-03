@@ -1,7 +1,6 @@
 import lang.stride.*;
 import java.util.*;
 import greenfoot.*;
-
 /**
  * 
  */
@@ -702,6 +701,7 @@ public class Level extends World
         highScoreCount(score);
         livesCount(lives);
         level.playLoop();
+        ghostSpeed();
 
     }
 
@@ -730,4 +730,10 @@ public class Level extends World
     {
         showText("" + lives, 95, 778);
     }
-}
+    public void ghostSpeed(){
+    if (speed > 3) {
+     showText("The ghosts have gained speed", 450, 780);
+    }
+
+}}
+

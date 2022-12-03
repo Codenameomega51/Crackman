@@ -18,4 +18,6 @@ comment5.target=void\ highScoreCount(int)
 comment6.params=lives
 comment6.target=void\ livesCount(int)
 comment6.text=\r\n\ \r\n
-numComments=7
+comment7.params=
+comment7.target=void\ ghostSpeed()
+numComments=8

@@ -6,16 +6,16 @@ import greenfoot.*;
 /**
  * 
  */
-public class World_PlayButton extends Actor
+public class World_GameWinPlayButton extends Actor
 {
-
+ static GreenfootSound start;
     /**
-     * Act - do whatever the World_PlayButton wants to do. This method is called whenever the 'Act' or 'Run' button gets pressed in the environment.
+     * Act - do whatever the World_GameWinPlayButton wants to do. This method is called whenever the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act()
 
     {
-      
+
         if (Greenfoot.mouseMoved(getWorld())) {
             setImage("PlayButton.png");
         }
@@ -23,10 +23,9 @@ public class World_PlayButton extends Actor
             setImage("newPlay.png");
         }
         if (Greenfoot.mouseClicked(this)) {
-            MainMenu.start.stop();
-            Level.lives = 3;
+            Lost.lost.stop();
             Level.score = 0;
-            Level.speed = 3;
+            Level.speed = Level.speed + 1;
             World levelWorld =  new Level();
             Greenfoot.setWorld(levelWorld);
         }

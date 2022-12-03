@@ -184,7 +184,7 @@ public class CrackMan extends Actor
     public void levelc(){
         if (getWorld().getObjects(Tacos.class).size() == 0 && 
             getWorld().getObjects(Powerup.class).size() == 0) {
-            World comp = new CompleteLevel();
+            World comp = new Won();
             Greenfoot.setWorld(comp);
         }
     }
