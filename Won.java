@@ -9,6 +9,7 @@ public class Won extends World
 {
     int hscore = Level.highScoreCount;
     int highscore;
+    GreenfootSound win = new GreenfootSound("celebration.mp3");
     /**
      * Constructor for objects of class GameEnded.
      */
@@ -16,23 +17,24 @@ public class Won extends World
     {
         super(900, 800, 1);
         prepare();
-
-      
+        Level.level.stop();
 
     }
 
     public void act(){
-            scoreCount(hscore);
+        scoreCount(hscore);
+        win.play();
     }
-     public void scoreCount(int hscore)
+
+    public void scoreCount(int hscore)
     {
-        
+
         if (highscore == 12900) {
             highscore = hscore + highscore;
-        showText("" + highscore , 500, 340);
-        
+            showText("" + highscore , 500, 340);
+
         } else
-        showText("" + hscore , 500, 340);
+            showText("" + hscore , 500, 340);
     }
 
     /**

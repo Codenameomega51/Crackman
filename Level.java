@@ -714,13 +714,13 @@ public class Level extends World
         if (highScore < score){
             highScore = score;
         } else
-        highScoreCount = highScore;
-        
+            highScoreCount = highScore;
+
     }
-    
+
     public void highScoreCount(int hscore) {
-    showText("High Score: " + highScoreCount, 700, 17);
-    
+        showText("High Score: " + highScoreCount, 700, 17);
+
     }
 
     /**
@@ -730,10 +730,11 @@ public class Level extends World
     {
         showText("" + lives, 95, 778);
     }
-    public void ghostSpeed(){
-    if (speed > 3) {
-     showText("The ghosts have gained speed", 450, 780);
-    }
 
-}}
+    public void ghostSpeed(){
+        if (speed > 3) {
+            showText("The ghosts have gained speed", 450, 780);
+        }
+
+    }}
 

@@ -174,8 +174,6 @@ public class CrackMan extends Actor
                     Greenfoot.setWorld(lost);
                 }
             } else {
-                World temp = new temploss();
-                Greenfoot.setWorld(temp);
             }
         }
         return ate;
