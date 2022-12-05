@@ -11,4 +11,6 @@ comment3.params=
 comment3.target=boolean\ win()
 comment4.params=
 comment4.target=boolean\ getWall()
-numComments=5
+comment5.params=
+comment5.target=void\ ate()
+numComments=6

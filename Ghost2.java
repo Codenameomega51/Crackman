@@ -8,8 +8,7 @@ import greenfoot.*;
 public class Ghost2 extends Ghosts
 {
     public GifImage Ghost1 =  new  GifImage("Ghost2Gif.gif");
-int speed = Level.speed;
-
+    int speed = Level.speed;
 
     /**
      * Act - do whatever the Ghost2 wants to do. This method is called whenever the 'Act' or 'Run' button gets pressed in the environment.
@@ -20,6 +19,7 @@ int speed = Level.speed;
             mouvement();
         }
         setImage(Ghost1.getCurrentImage());
+        ate();
     }
 
     /**
@@ -43,7 +43,7 @@ int speed = Level.speed;
                 turn(180);
             }
         }
-       
+
     }
 
     public boolean win(){
@@ -68,5 +68,15 @@ int speed = Level.speed;
         Actor wallR = getOneObjectAtOffset(xOffset, yOffset, Wall_Right.class );
         Actor wallU = getOneObjectAtOffset(xOffset, yOffset, Wall_Up.class );
         return (wall!=null) || (wallV2!=null) ||(wallH!=null) || (wallH2!=null) || (wallD!=null) || (wallR!=null) || (wallL!=null) || (wallU!=null); 
+    }
+
+    public void  ate () {
+        Actor pac = getOneIntersectingObject(CrackMan.class);
+        if (CrackMan.power) {
+            if (pac != null) {
+                this.setLocation(503, 147);
+                Greenfoot.playSound("ate.wav");
+            }
+        }
     }
 }

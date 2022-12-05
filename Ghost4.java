@@ -18,6 +18,7 @@ public class Ghost4 extends Ghosts
             mouvement();
         }
         setImage(Ghost1.getCurrentImage());
+        ate();
     }
 
     /**
@@ -27,10 +28,10 @@ public class Ghost4 extends Ghosts
     {
 
         if(getWall () == false){
-           move(speed);
+            move(speed);
         } else {
             int rand = Greenfoot.getRandomNumber(3);
-           move(speed);
+            move(speed);
             if (rand == 0){
                 turn(90);
             }
@@ -88,5 +89,15 @@ public class Ghost4 extends Ghosts
         Actor wallR = getOneObjectAtOffset(xOffset, yOffset, Wall_Right.class );
         Actor wallU = getOneObjectAtOffset(xOffset, yOffset, Wall_Up.class );
         return (wall!=null) || (wallV2!=null) ||(wallH!=null) || (wallH2!=null) || (wallD!=null) || (wallR!=null) || (wallL!=null) || (wallU!=null); 
+    }
+
+    public void  ate () {
+        Actor pac = getOneIntersectingObject(CrackMan.class);
+        if (CrackMan.power) {
+            if (pac != null) {
+                this.setLocation(408, 147);
+                Greenfoot.playSound("ate.wav");
+            }
+        }
     }
 }

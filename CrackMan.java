@@ -9,7 +9,7 @@ public class CrackMan extends Actor
 {
     private GreenfootImage image = getImage();
     private int direction;
-    private boolean power = false;
+    public static boolean power = false;
     private int speed = 2;
     private int timer;
     private int spedUp = speed + 1;

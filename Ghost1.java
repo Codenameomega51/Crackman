@@ -25,6 +25,7 @@ public class Ghost1 extends Ghosts
             mouvement();
         }
         setImage(Ghost1.getCurrentImage());
+        ate();
     }
 
     /**
@@ -32,9 +33,7 @@ public class Ghost1 extends Ghosts
      */
     public void mouvement()
 
-   
     { 
-         
         if(getWall () == false){
             move(speed);
         } else {
@@ -51,10 +50,9 @@ public class Ghost1 extends Ghosts
             }
         }
 
-
     }
 
-     private boolean getWall(){
+    private boolean getWall(){
         int distance = 50/2;
         int xOffset = (int) Math.ceil(distance * Math.cos(Math.toRadians(getRotation())));
         int yOffset = (int) Math.ceil(distance * Math.sin(Math.toRadians(getRotation())));
@@ -76,5 +74,15 @@ public class Ghost1 extends Ghosts
             win = true;
         }
         return win;
+    }
+
+    public void  ate () {
+        Actor pac = getOneIntersectingObject(CrackMan.class);
+        if (CrackMan.power) {
+            if (pac != null) {
+                this.setLocation(546, 185);
+                Greenfoot.playSound("ate.wav");
+            }
+        }
     }
 }
