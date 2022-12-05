@@ -679,7 +679,6 @@ public class Level extends World
 
         Ghost1 ghost12 = new Ghost1();
         addObject(ghost12,546,185);
-
         Ghost4 ghost42 = new Ghost4();
         addObject(ghost42,503,147);
         Ghost5 ghost52 = new Ghost5();

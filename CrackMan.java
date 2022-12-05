@@ -117,7 +117,7 @@ public class CrackMan extends Actor
             timer = 300;
             powerup = powerup - 1;
             power = true;
-        
+
         }
         return power;
     }
@@ -139,12 +139,12 @@ public class CrackMan extends Actor
                 if(getWall () == false){
                     move(spedUp);
                 }
-                } else if (timer == 0) {
+            } else if (timer == 0) {
                 power = false;
-                }
+            }
         }
         else {
-           direction();
+            direction();
         }
 
     }
@@ -162,8 +162,6 @@ public class CrackMan extends Actor
         Actor ghost5 = getOneIntersectingObject(Ghost5.class);
         if (ghost1 != null || ghost2 != null || ghost3 != null || ghost4 != null 
         || ghost5 != null) {
-            //Saving score problem (possibly fixable by retry button upon loss)
-            //infinite loss porblem
             if (eatPowerup() == false){
                 ate = true;
                 Level.lives = Level.lives - 1;
@@ -174,6 +172,7 @@ public class CrackMan extends Actor
                     Greenfoot.setWorld(lost);
                 }
             } else {
+                Level.score = Level.score + 500;
             }
         }
         return ate;
@@ -181,7 +180,7 @@ public class CrackMan extends Actor
 
     public void levelc(){
         if (getWorld().getObjects(Tacos.class).size() == 0 && 
-            getWorld().getObjects(Powerup.class).size() == 0) {
+        getWorld().getObjects(Powerup.class).size() == 0) {
             World comp = new Won();
             Greenfoot.setWorld(comp);
         }
