@@ -49,16 +49,25 @@ public class CrackMan extends Actor
     {
 
         if (Greenfoot.isKeyDown("d")) {
+            
             direction = 1;
+            move(3);
+            checkWall();
         }
         if (Greenfoot.isKeyDown("w")) {
             direction = 2;
+             move(3);
+            checkWall();
         }
         if (Greenfoot.isKeyDown("a")) {
             direction = 3;
+             move(3);
+            checkWall();
         }
         if (Greenfoot.isKeyDown("s")) {
             direction = 4;
+             move(3);
+            checkWall();
         }
         direction();
     }
@@ -86,10 +95,7 @@ public class CrackMan extends Actor
             setImage(Crackman.getCurrentImage());
             setRotation(90);
         }
-        if(getWall () == false){
-            move(3);
-        } 
-
+       
     }
 
     /**
@@ -200,5 +206,42 @@ public class CrackMan extends Actor
         Actor wallU = getOneObjectAtOffset(xOffset, yOffset, Wall_Up.class );
         return wall!=null || wallV2!=null ||wallH!=null || wallH2!=null || wallD!=null || wallR!=null || wallL!=null || wallU!=null; 
     }
+    
+    public void checkWall(){
+    Actor wall = getOneIntersectingObject(Wall.class);
+    Actor wall2 = getOneIntersectingObject(Wall2.class);
+    Actor wallH = getOneIntersectingObject(WallHorizontal.class);
+    Actor wallH2 = getOneIntersectingObject(WallHorizontal2.class);
+    Actor wallD = getOneIntersectingObject(Wall_Down.class);
+     Actor wallL = getOneIntersectingObject(Wall_Left.class);
+      Actor wallR = getOneIntersectingObject(Wall_Right.class);
+       Actor wallU = getOneIntersectingObject(Wall_Up.class);
+    if(wall != null){
+    move(-3);
+    }
+    if(wall2 != null){
+    move(-3);
+    }
+     if(wallH != null){
+    move(-3);
+    }
+     if(wallH2 != null){
+    move(-3);
+    }
+    if(wallD != null){
+    move(-3);
+    }
+    if(wallU != null){
+    move(-3);
+    }
+     if(wallL != null){
+    move(-3);
+    }
+     if(wallR != null){
+    move(-3);
+    }
+    }
+    
+ 
 }
 

@@ -689,6 +689,10 @@ public class Level extends World
         addObject(ghost22,365,186);
         CrackMan crackMan2 = new CrackMan();
         addObject(crackMan2,700,574);
+        tacos67.setLocation(451,461);
+        removeObject(tacos67);
+        Powerup powerup4 = new Powerup();
+        addObject(powerup4,459,452);
     }
 
     /**
