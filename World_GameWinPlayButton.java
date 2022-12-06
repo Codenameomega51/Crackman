@@ -23,7 +23,7 @@ public class World_GameWinPlayButton extends Actor
             setImage("newPlay.png");
         }
         if (Greenfoot.mouseClicked(this)) {
-            Lost.lost.stop();
+            Won.win.stop();
             Level.score = 0;
             Level.speed = Level.speed + 1;
             World levelWorld =  new Level();

@@ -53,11 +53,11 @@ public class Ghost1 extends Ghosts
     }
 
     private boolean getWall(){
-        int distance = 100/2;
+        int distance = 50;
         int xOffset = (int) Math.ceil(distance * Math.cos(Math.toRadians(getRotation())));
         int yOffset = (int) Math.ceil(distance * Math.sin(Math.toRadians(getRotation())));
-        Actor wall = getOneObjectAtOffset(xOffset, yOffset, Wall2.class );
-        Actor wallV2 = getOneObjectAtOffset(xOffset, yOffset, Wall.class );
+        Actor wall = getOneObjectAtOffset(xOffset, yOffset, Wall.class );
+        Actor wallV2 = getOneObjectAtOffset(xOffset, yOffset, Wall2.class );
         Actor wallH = getOneObjectAtOffset(xOffset, yOffset, WallHorizontal.class );
         Actor wallH2 = getOneObjectAtOffset(xOffset, yOffset, WallHorizontal2.class );
         Actor wallD = getOneObjectAtOffset(xOffset, yOffset, Wall_Down.class );

@@ -9,7 +9,7 @@ public class Won extends World
 {
     int hscore = Level.highScoreCount;
     int highscore;
-    GreenfootSound win = new GreenfootSound("celebration.mp3");
+    public static GreenfootSound win = new GreenfootSound("celebration.mp3");
     /**
      * Constructor for objects of class GameEnded.
      */

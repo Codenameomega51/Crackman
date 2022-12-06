@@ -10,9 +10,9 @@ public class CrackMan extends Actor
     private GreenfootImage image = getImage();
     private int direction;
     public static boolean power = false;
-    private int speed = 2;
+    private int speed = 3;
     private int timer;
-    private int spedUp = speed + 1;
+    private int spedUp = speed + 2;
     private int score = 0;
     private int powerup = 3;
     public GifImage Crackman =  new  GifImage("CrackmanClosed.gif");
@@ -49,26 +49,26 @@ public class CrackMan extends Actor
     {
 
         if (Greenfoot.isKeyDown("d")) {
-            
+
             direction = 1;
-            move(3);
+            move(speed);
             checkWall();
         }
         if (Greenfoot.isKeyDown("w")) {
             direction = 2;
-             move(3);
+            move(speed);
             checkWall();
         }
         if (Greenfoot.isKeyDown("a")) {
             direction = 3;
-             move(3);
+            move(speed);
             checkWall();
         }
         if (Greenfoot.isKeyDown("s")) {
             direction = 4;
-             move(3);
+            move(speed);
             checkWall();
-        }
+        } 
         direction();
     }
 
@@ -76,26 +76,30 @@ public class CrackMan extends Actor
         int x = getX();
         int y = getY();
         if (direction == 1) {
-            x = x + 2;
+        //right
+           // x = x + 2;
             setImage(Crackman.getCurrentImage());
             setRotation(0);
         }
         if (direction == 2) {
-            y = y - 2;
+            //up
+           // y = y - 2;
             setImage(Crackman.getCurrentImage());
             setRotation(270);
         }
         if (direction == 3) {
-            x = x - 2;
+            //left
+           // x = x - 2;
             setImage(CrackmanLeft.getCurrentImage());
             setRotation(180);
         }
         if (direction == 4) {
-            y = y + 2;
+            //down
+           // y = y + 2;
             setImage(Crackman.getCurrentImage());
             setRotation(90);
         }
-       
+
     }
 
     /**
@@ -137,16 +141,21 @@ public class CrackMan extends Actor
 
             timer = timer - 1;
             setImage(CrackedUp.getCurrentImage()); 
-            if( direction != 3){
+          
+            
+           
+            if (timer >= 1) {
+                speed = spedUp;
+                checkWall();
+                 if( direction != 3){
                 setImage(Cracked.getCurrentImage());
                 defeat();
+                checkWall();
             }
-            if (timer >= 1) {
-                if(getWall () == false){
-                    move(spedUp);
-                }
-            } else if (timer == 0) {
+                
+                } else if (timer == 0) {
                 power = false;
+                speed = 3;
             }
         }
         else {
@@ -192,56 +201,56 @@ public class CrackMan extends Actor
         }
     }
 
-    private boolean getWall(){
-        int distance = 50/2;
-        int xOffset = (int) Math.ceil(distance * Math.cos(Math.toRadians(getRotation())));
-        int yOffset = (int) Math.ceil(distance * Math.sin(Math.toRadians(getRotation())));
-        Actor wall = getOneObjectAtOffset(xOffset, yOffset, Wall2.class );
-        Actor wallV2 = getOneObjectAtOffset(xOffset, yOffset, Wall.class );
-        Actor wallH = getOneObjectAtOffset(xOffset, yOffset, WallHorizontal.class );
-        Actor wallH2 = getOneObjectAtOffset(xOffset, yOffset, WallHorizontal2.class );
-        Actor wallD = getOneObjectAtOffset(xOffset, yOffset, Wall_Down.class );
-        Actor wallL = getOneObjectAtOffset(xOffset, yOffset, Wall_Left.class );
-        Actor wallR = getOneObjectAtOffset(xOffset, yOffset, Wall_Right.class );
-        Actor wallU = getOneObjectAtOffset(xOffset, yOffset, Wall_Up.class );
-        return wall!=null || wallV2!=null ||wallH!=null || wallH2!=null || wallD!=null || wallR!=null || wallL!=null || wallU!=null; 
-    }
-    
-    public void checkWall(){
-    Actor wall = getOneIntersectingObject(Wall.class);
-    Actor wall2 = getOneIntersectingObject(Wall2.class);
-    Actor wallH = getOneIntersectingObject(WallHorizontal.class);
-    Actor wallH2 = getOneIntersectingObject(WallHorizontal2.class);
-    Actor wallD = getOneIntersectingObject(Wall_Down.class);
-     Actor wallL = getOneIntersectingObject(Wall_Left.class);
-      Actor wallR = getOneIntersectingObject(Wall_Right.class);
-       Actor wallU = getOneIntersectingObject(Wall_Up.class);
-    if(wall != null){
-    move(-3);
-    }
-    if(wall2 != null){
-    move(-3);
-    }
-     if(wallH != null){
-    move(-3);
-    }
-     if(wallH2 != null){
-    move(-3);
-    }
-    if(wallD != null){
-    move(-3);
-    }
-    if(wallU != null){
-    move(-3);
-    }
-     if(wallL != null){
-    move(-3);
-    }
-     if(wallR != null){
-    move(-3);
-    }
-    }
-    
- 
-}
+    // private boolean getWall(){
+        // int distance = 50/2;
+        // int xOffset = (int) Math.ceil(distance * Math.cos(Math.toRadians(getRotation())));
+        // int yOffset = (int) Math.ceil(distance * Math.sin(Math.toRadians(getRotation())));
+        // Actor wall = getOneObjectAtOffset(xOffset, yOffset, Wall2.class );
+        // Actor wallV2 = getOneObjectAtOffset(xOffset, yOffset, Wall.class );
+        // Actor wallH = getOneObjectAtOffset(xOffset, yOffset, WallHorizontal.class );
+        // Actor wallH2 = getOneObjectAtOffset(xOffset, yOffset, WallHorizontal2.class );
+        // Actor wallD = getOneObjectAtOffset(xOffset, yOffset, Wall_Down.class );
+        // Actor wallL = getOneObjectAtOffset(xOffset, yOffset, Wall_Left.class );
+        // Actor wallR = getOneObjectAtOffset(xOffset, yOffset, Wall_Right.class );
+        // Actor wallU = getOneObjectAtOffset(xOffset, yOffset, Wall_Up.class );
+        // return wall!=null || wallV2!=null ||wallH!=null || wallH2!=null || wallD!=null || wallR!=null || wallL!=null || wallU!=null; 
+    // }
 
+    public void checkWall(){
+        Actor wall = getOneIntersectingObject(Wall.class);
+        Actor wall2 = getOneIntersectingObject(Wall2.class);
+        Actor wallH = getOneIntersectingObject(WallHorizontal.class);
+        Actor wallH2 = getOneIntersectingObject(WallHorizontal2.class);
+        Actor wallD = getOneIntersectingObject(Wall_Down.class);
+        Actor wallL = getOneIntersectingObject(Wall_Left.class);
+        Actor wallR = getOneIntersectingObject(Wall_Right.class);
+        Actor wallU = getOneIntersectingObject(Wall_Up.class);
+        if((wall != null) || (wall2 != null) || (wallH != null) ||  (wallH2 != null)
+        || (wallD != null) || (wallU != null) || (wallL != null) ||(wallR != null)){
+            move(-speed);
+        }
+        
+        // if(wall2 != null){
+            // move(-3);
+        // }
+        // if(wallH != null){
+            // move(-3);
+        // }
+        // if(wallH2 != null){
+            // move(-3);
+        // }
+        // if(wallD != null){
+            // move(-3);
+        // }
+        // if(wallU != null){
+            // move(-3);
+        // }
+        // if(wallL != null){
+            // move(-3);
+        // }
+        // if(wallR != null){
+            // move(-3);
+        // }
+    }
+
+}
